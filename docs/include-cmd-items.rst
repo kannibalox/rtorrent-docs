@@ -14,32 +14,127 @@ All `d.*` commands take an info hash as the first argument when called over the 
     d.accepting_seeders
     d.accepting_seeders.disable
     d.accepting_seeders.enable
+
+        .. code-block:: ini
+
+           d.accepting_seeders = ‹hash› ≫ int ‹accepting›
+           d.accepting_seeders.enable = ‹hash> ≫ 0
+           d.accepting_seeders.disable = ‹hash› ≫ 0
+
+        Determines whether the torrent will accept any seeders. :term:`d.accepting_seeders.enable` will change the value to 1 (true), while :term:`d.accepting_seeders.disable` changes it to 0.
+
     d.base_filename
+        .. code-block:: ini
+
+           d.base_filename = ‹hash› ≫ string ‹filename›
+
+        Retrieve the base filename. Correlates with the ``name`` field in the info dictationary of a torrent file.
+
     d.base_path
+
+        .. code-block:: ini
+
+           d.base_path = ‹hash› ≫ string ‹path›
+
+        Returns the base path of the torrent, which is equivalent to :term:`d.directory_base` plus :term:`d.base_filename`
+
     d.bitfield
+
+        .. code-block:: ini
+
+           d.bitfield = ‹hash› ≫ string ‹bitfield›
+
+        Returns the bitfield map as a string of hexadecimal characters.
+
     d.bytes_done
+
+        .. code-block:: ini
+
+           d.bytes = ‹hash› ≫ ‹bytes›
+
+        Returns the number of bytes in the torrent that have finished downloading.
+
     d.check_hash
 
-        **TODO**
+        .. code-block:: ini
+
+           d.hash = ‹hash› ≫ 0
+
+        Tells the torrent to perform a hash check.
 
     d.chunk_size
+
+        .. code-block:: ini
+
+           d.chunk_size = ‹hash› ≫ ‹bytes›
 
         Returns the chunk size of the item (also known as the
         "peice size") in bytes.
 
-        .. code-block:: ini
-
-           d.chunk_size = ‹hash› ≫ 0
 
     d.chunks_hashed
+
+        .. code-block:: ini
+
+           d.chunks_hashed = ‹hash› ≫ ‹num›
+
+        The number of chunks which have been fully hashed.
+ 
     d.chunks_seen
+
+        Prints out 2 ``0``s for each chunk in the torrents. Appears to
+        only exist for internal use.
+    
     d.close
     d.close.directly
+
+        .. code-block:: ini
+
+           This closes the torrent: dropping all active peer connections, closing the file, flushing to the session file, and sending an 'end of seeding' message to the tracker. :term:`d.close.directly` skips many of those steps, and simply marks the torrent as stopped.
+
     d.complete
+
+        .. code-block:: ini
+
+           d.complete ≫ ‹bool›
+
+        Returns 1 if the torrent is marked as completely downloaded, 0 otherwise.
+
     d.completed_bytes
+
+        .. code-block:: ini
+
+           d.completed_bytes = ≫ ‹bytes›
+
+        Returns the number of completed bytes.
+
     d.completed_chunks
+
+        .. code-block:: ini
+
+           d.completed_chunks = ≫ ‹chunks›
+
+        Returns the number of completed chunks.
+
     d.connection_current
     d.connection_current.set
+
+        .. code-block:: ini
+
+           d.connection_current ≫ string ‹state›
+           d.connection_current.set = ‹state› ≫ 0
+
+        Possible values for ``state`` include:
+
+        - leech: Receiving data from peers (this does not preclude sending out data as well)
+        - seed: Sending data to peers, no receiving
+        - initial_seed: A variety of seeding that prioritizes sending out a complete copy
+          of the data over the usual "rarest chunk first" selection.
+        - metadata: For magnet links that are still resolving their metadata
+
+        There shouldn't be any to change this setting to any value except ``initial_seed``.
+        This can be done via the UI by hitting ``Ctrl-B`` on an item (it must be inactive).
+
     d.connection_leech
     d.connection_seed
     d.create_link
