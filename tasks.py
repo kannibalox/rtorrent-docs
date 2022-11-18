@@ -160,11 +160,11 @@ def undoc(ctx):
     for kind, exceptions in checks.items():
         ctx.run('rtxmlrpc system.has.{kind}_methods | '
                 'while read cmd; do'
-                '    egrep -m1 "^    $cmd" docs/*rst >/dev/null || echo "$cmd"; '
-                'done | egrep -v "^({exc_re})" | sort'
+                '    grep -E -m1 "^    $cmd" docs/*rst >/dev/null || echo "$cmd"; '
+                'done | grep -E -v "^({exc_re})" | sort'
                 .format(kind=kind, exc_re='|'.join(exceptions)))
 
     ctx.run(': v0.9.7 commands')
     for cmd_name in commands_097:
-        ctx.run('egrep -m1 "^    {cmd}" docs/*rst >/dev/null || echo "{cmd}"'
+        ctx.run('grep -E -m1 "^    {cmd}" docs/*rst >/dev/null || echo "{cmd}"'
                 .format(cmd=cmd_name), echo=False)
