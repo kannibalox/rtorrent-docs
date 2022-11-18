@@ -304,7 +304,9 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
     event.view.hide
     event.view.show
 
-        .. versionadded:: 0.9.8 and rTorrent-PS 1.1
+        .. versionadded:: 0.9.8
+
+        *New in rTorrent-PC version 1.1*
 
         .. code-block:: ini
 
@@ -392,7 +394,9 @@ just like a cron job, but with a resolution of seconds.
     close_low_diskspace
     close_low_diskspace.normal
 
-        .. rubric:: *close_low_diskspace.normal since rTorrent-PS 1.2 / rTorrent 0.9.9*
+        *New in master branch.*
+
+        *New in rTorrent-PS version 1.2.*
 
         .. code-block:: ini
 
@@ -478,7 +482,7 @@ Importing Script Files
 
     import.return
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -579,7 +583,7 @@ Conditions (if/branch/do)
 
     do
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -735,7 +739,7 @@ Conditional Operators
 
     compare
 
-        .. rubric:: *rTorrent-PS 0.x+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -794,7 +798,7 @@ String Functions
 
 
     string.len
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -814,7 +818,7 @@ String Functions
     string.startswith
     string.endswith
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -845,7 +849,7 @@ String Functions
     string.contains
     string.contains_i
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -864,7 +868,7 @@ String Functions
 
     string.substr
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -889,7 +893,7 @@ String Functions
 
     string.shorten
 
-        .. versionadded:: 1.2 **rTorrent-PS only**
+        *New in version rTorrent-PS 1.2 only.*
 
         .. code-block:: ini
 
@@ -911,7 +915,7 @@ String Functions
 
 
     string.join
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -929,7 +933,7 @@ String Functions
 
 
     string.split
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -950,7 +954,7 @@ String Functions
     string.lpad
     string.rpad
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -977,7 +981,7 @@ String Functions
     string.lstrip
     string.rstrip
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1004,7 +1008,7 @@ String Functions
     string.map
     string.replace
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1037,7 +1041,7 @@ Array Functions
 
     array.at
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1192,7 +1196,7 @@ The ``to_*`` forms are **deprecated**.
 
     convert.time_delta
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1215,7 +1219,7 @@ The ``to_*`` forms are **deprecated**.
 
     convert.human_size
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1249,7 +1253,7 @@ The ``to_*`` forms are **deprecated**.
 
     convert.magnitude
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in version rTorrent-PS 1.1 only.*
 
         .. code-block:: ini
 
@@ -1288,7 +1292,9 @@ The ``to_*`` forms are **deprecated**.
 
     value
 
-        .. rubric:: *since rTorrent-PS 1.1 / rTorrent 0.9.8*
+        .. versionadded:: 0.9.8
+
+        *New in rTorrent PS version 1.1.*
 
         .. code-block:: ini
 
