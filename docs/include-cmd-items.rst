@@ -949,13 +949,34 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
         respectively. If :term:`event.download.finished` has not triggered yet, :term:`d.timestamp.finished` will return 0.
 
 
+    d.timestamp.last_active
+    d.timestamp.last_active.set
+
+        *New in jesec/rtorrent version 0.9.8r14 only*
+
+        "Activity" here means "last time any peer was connected",
+        consistent with the definition of ``d.timestamp.last_active``
+        in pyrocore.
+
+        Some caveats: the date would only be recorded when the last
+        peer disconnects naturally. So if the user manually stopped
+        the torrent, or stop the rTorrent when the torrent is still
+        active, the timestamp would not be recorded. This is because
+        when the torrent closes (or download object destructs),
+        pending events are destroyed as well. Additionally, users have
+        to check if the torrent is currently active by themselves, so
+        rTorrent does not have to frequently write current time to the
+        session.
+
+
     d.tracker.insert
 
         .. code-block:: ini
 
             d.tracker.insert = ‹hash›, value ‹group›, string ‹url› ≫ 0
 
-        Inserts a tracker into a tracker group. A tracker group can be numbered from 0-32, and consists of multiple URLs.
+        Inserts a tracker into a tracker group. A tracker group can be
+        numbered from 0-32, and consists of multiple URLs.
 
 
     d.tracker.send_scrape
