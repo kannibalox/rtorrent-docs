@@ -59,30 +59,7 @@ If you want to run *ruTorrent*, the default version of *PHP* is very important (
 
         *bash · Ubuntu/Mint · full HTPC setup*
 
-        *AtoMiC Toolkit* simplifies the setup of a HTPC or home server and its management, on *Ubuntu* and *Debian* variants including *Raspbian*. It currently supports:
-
-        .. hlist::
-            :columns: 5
-
-            * CouchPotato
-            * Emby
-            * Headphones
-            * HTPC Manager
-            * Lazy Librarian
-            * Mylar
-            * Nzbget
-            * NZBHydra
-            * Plex
-            * PlexPy
-            * PyLoad
-            * qBittorrent
-            * Radarr
-            * Sabnzbdplus
-            * Sickgear
-            * Sickrage
-            * Sonarr
-            * TransmissionBT
-            * Webmin
+        *AtoMiC Toolkit* simplifies the setup of a HTPC or home server and its management, on *Ubuntu* and *Debian* variants including *Raspbian*.
 
     `rtinst <https://github.com/arakasi72/rtinst>`_
 
@@ -135,3 +112,8 @@ rTorrent Distributions
     `rTorrent-PS-CH <https://github.com/chros73/rtorrent-ps-ch_setup/wiki>`_
 
         This puts more patches and a different default configuration on top of *rTorrent-PS*. It also tries to work with the current git HEAD of *rTorrent*, which *rTorrent-PS* does not.
+
+    `jesec/rtorrent <https://github.com/jesec/rtorrent>`_
+
+        This distribution focuses on additional user-facing features, optimizations and better integrations with modern users of RPC interfaces. One of the long-term goal of this project is to switch from antique XML-RPC to modern protocols with bidirectional capabilities such as gRPC, JSON-RPC over WebSocket or GraphQL, which allows real-time events, less serialization/transfer overheads, better security, etc.
+
