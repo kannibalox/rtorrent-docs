@@ -1,9 +1,0 @@
-# requirements for building the docs locally
-
-# General tools
-invoke==1.4.1
-
-# Sphinx
--r docs/requirements.txt
-sphinx-rtd-theme==1.0.0
-sphinx-autobuild==2021.3.14

@@ -1,2 +1,0 @@
-# requirements for use on "Read The Docs"
-Sphinx==5.1.1
