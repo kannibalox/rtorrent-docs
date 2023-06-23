@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "\"rTorrent Handbook\" community project"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "rtorrent_docs"}]
+packages = []
 
 [tool.poetry.dependencies]
 python = "^3.8"
