@@ -30,13 +30,16 @@ of your distribution, or alternatively install from source (see below).
 Automated Installation
 ----------------------
 
-This is just a selection of the myriad of projects out there that perform automated installs.
-If you miss something, please make sure a potential new entry is actually still maintained,
-and mention what target platforms it is designed and tested for.
+This is just a selection of the myriad of projects out there that
+perform automated installs.  If you miss something, please make sure a
+potential new entry is actually still maintained, and mention what
+target platforms it is designed and tested for.
 
 Projects that work on *Debian* very likely also work on *Ubuntu*.
-Just make sure the release dates match reasonably, i.e. *Jessie* is equivalent to either *Xenial* or *Trusty*.
-If you want to run *ruTorrent*, the default version of *PHP* is very important (either 5 or 7).
+Just make sure the release dates match reasonably, i.e. *Jessie* is
+equivalent to either *Xenial* or *Trusty*.  If you want to run
+*ruTorrent*, the default version of *PHP* is very important (either 5
+or 7).
 
 .. glossary::
 
@@ -44,7 +47,14 @@ If you want to run *ruTorrent*, the default version of *PHP* is very important (
 
         *Ansible · Ubuntu Xenial + Trusty · Debian Jessie + Wheezy · Raspian*
 
-        This will install *rTorrent-PS*, *pyrocore*, and related software onto any remote dedicated server or VPS with root access, running *Debian* or a Debian-like OS. It does so via *Ansible*, which is in many ways superior to the usual *“call a bash script to set up things once and never be able to update them again”*, since you can run this setup repeatedly to either fix problems, or to install upgrades and new features added to the project's repository.
+        This will install *rTorrent-PS*, *pyrocore*, and related
+        software onto any remote dedicated server or VPS with root
+        access, running *Debian* or a Debian-like OS. It does so via
+        *Ansible*, which is in many ways superior to the usual *“call
+        a bash script to set up things once and never be able to
+        update them again”*, since you can run this setup repeatedly
+        to either fix problems, or to install upgrades and new
+        features added to the project's repository.
 
     `QuickBox <https://github.com/QuickBox>`_ and `Swizzin <https://github.com/swizzin/swizzin>`_
 
@@ -59,7 +69,9 @@ If you want to run *ruTorrent*, the default version of *PHP* is very important (
 
         *bash · Ubuntu/Mint · full HTPC setup*
 
-        *AtoMiC Toolkit* simplifies the setup of a HTPC or home server and its management, on *Ubuntu* and *Debian* variants including *Raspbian*.
+        *AtoMiC Toolkit* simplifies the setup of a HTPC or home server
+        and its management, on *Ubuntu* and *Debian* variants
+        including *Raspbian*.
 
     `rtinst <https://github.com/arakasi72/rtinst>`_
 
