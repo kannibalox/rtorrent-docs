@@ -289,10 +289,10 @@
         * 2 – ``dialect_apache``
 
         ``dialect_i8`` is the default value, which means the XMLRPC API will use the
-        `xmlrpc-c i8 extension type <http://xmlrpc-c.sourceforge.net/doc/libxmlrpc.html#extensiontype>`_
+        `xmlrpc-c i8 extension type <https://xmlrpc-c.sourceforge.net/doc/libxmlrpc.html#extensiontype>`_
         for returning long integers.
 
-        See `its documentation <http://xmlrpc-c.sourceforge.net/doc/libgeneral.html#dialect>`_
+        See `its documentation <https://xmlrpc-c.sourceforge.net/doc/libgeneral.html#dialect>`_
         for more information on how ``xmlrpc-c`` handles dialects.
 
 

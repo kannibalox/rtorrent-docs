@@ -487,9 +487,9 @@ Commands related to the operating system and the XMLRPC API.
 
 
 .. _`umask`: https://en.wikipedia.org/wiki/Umask
-.. _`XML-RPC Introspection`: http://xmlrpc-c.sourceforge.net/introspection.html
+.. _`XML-RPC Introspection`: https://xmlrpc-c.sourceforge.net/introspection.html
 .. _`xmlrpc-c system.multicall docs`: https://openacs.org/api-doc/proc-view?proc=system.multicall
-.. _`xmlrpc-c system.capabilities`: http://xmlrpc-c.sourceforge.net/doc/libxmlrpc_server.html#system.capabilities
+.. _`xmlrpc-c system.capabilities`: https://xmlrpc-c.sourceforge.net/doc/libxmlrpc_server.html#system.capabilities
 .. _`Daemon Mode`: https://github.com/rakshasa/rtorrent/wiki/Daemon_Mode
 
 

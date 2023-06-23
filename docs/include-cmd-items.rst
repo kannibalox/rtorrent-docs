@@ -1151,7 +1151,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
 .. _`scrape request`: https://en.wikipedia.org/wiki/Tracker_scrape
 
-.. _`optional numwant parameter`: https://wiki.theory.org/index.php/BitTorrentSpecification#Tracker_Request_Parameters
+.. _`optional numwant parameter`: https://wiki.theory.org/BitTorrentSpecification#Tracker_Request_Parameters
 
 .. _`PEX`: https://en.wikipedia.org/wiki/Peer_exchange
 
