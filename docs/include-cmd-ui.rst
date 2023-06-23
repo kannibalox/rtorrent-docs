@@ -318,11 +318,37 @@ Commands in this group control aspects of the `curses` UI.
 .. glossary::
 
     view.add
+
+        .. code-block:: ini
+
+            view.add=‹view-name› ≫ 0
+
+        Create a new view with the given name
+
     view.list
+
+        .. code-block:: ini
+
+            view.list ≫ [strings]
+
+        Returns a list of all the view names.
+
     view.size
+
+        .. code-block:: ini
+
+            view.size=‹view-name› ≫ value
+
+        Returns the size of all items in the view.
+
     view.persistent
 
-        **TODO**
+        .. code-block:: ini
+
+            view.persistent=‹view-name› ≫ 0
+
+        Marks the view as persistent. Persistent views are retained
+        across restarts.
 
     view.event_added
     view.event_removed
