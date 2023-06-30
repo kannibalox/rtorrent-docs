@@ -30,10 +30,6 @@ The :ref:`generated index <genindex>` also lists all the command names.
     Changing this to be consistent is a breaking change, and might happen sometime in the future.
 
 
-.. contents:: List of Command Groups
-    :local:
-
-
 The following are similar, but incomplete resources:
 
 -  `PyroScope's reference`_
