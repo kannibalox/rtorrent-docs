@@ -60,8 +60,7 @@ def docs(ctx, open_tab=False):
     print("\n*** Generating HTML doc ***\n")
     subprocess.check_call(
         'command cd docs >/dev/null'
-        ' && . {pwd}/.venv/bin/activate'
-        ' && nohup {pwd}/docs/Makefile SPHINXBUILD="sphinx-autobuild --port {port:d}'
+        ' && poetry run {pwd}/docs/Makefile SPHINXBUILD="sphinx-autobuild --port {port:d}'
         '          --ignore \'.*\' --ignore \'*.log\' --ignore \'*.png\' --ignore \'*.txt\'" html >autobuild.log 2>&1 &'
         .format(port=SPHINX_AUTOBUILD_PORT, pwd=os.getcwd()), shell=True)
 
