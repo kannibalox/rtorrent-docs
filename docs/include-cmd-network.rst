@@ -5,16 +5,17 @@
 
 .. glossary::
 
+    bind
     network.bind_address
     network.bind_address.set
 
        .. code-block:: ini
 
-           network.bind_address ≫ ‹seconds›
-           network.bind_address.set = ‹seconds› ≫ 0
+           network.bind_address ≫ ‹address›
+           network.bind_address.set = ‹address› ≫ 0
 
        Allows binding to a specific interface. This option can only be set at
-       startup.
+       startup. ``bind`` is an alias for ``network.bind_address``.
 
     network.http.dns_cache_timeout
     network.http.dns_cache_timeout.set
@@ -96,7 +97,7 @@
 
          Determines if how HTTPS connections are validated.
          By default, both the peer and the host are fully validated.
-         See the curl documention for
+         See the curl documentation for
          `SSL_VERIFYHOST <https://manpages.ubuntu.com/manpages/jammy/en/man3/CURLOPT_SSL_VERIFYHOST.3.html>`_
          and
          `SSL_VERIFYPEER <https://manpages.ubuntu.com/manpages/jammy/en/man3/CURLOPT_SSL_VERIFYPEER.3.html>`_
@@ -124,6 +125,7 @@
         tracker. This defaults to whatever port is picked from
         :term:`network.port_range`.
 
+    ip
     network.local_address
     network.local_address.set
 
@@ -132,8 +134,10 @@
            network.local_address ≫ <address>
            network.local_address.set = <address> ≫ 0
 
-        This allows binding to a specific network interface. By default it is
-        blank, meaning it will bind to all network interfaces (i.e. ``0.0.0.0``).
+        This allows binding to a specific network interface. By
+        default it is blank, meaning it will bind to all network
+        interfaces (i.e. ``0.0.0.0``). ``ip`` is an alias for
+        ``network.local_address``
 
     network.max_open_files
     network.max_open_files.set
@@ -163,8 +167,10 @@
 
     network.port_open
     network.port_open.set
+    port_random
     network.port_random
     network.port_random.set
+    port_range
     network.port_range
     network.port_range.set
 
@@ -179,10 +185,13 @@
 
         This set of options controls how the incoming port is picked.
         ``network.port_open`` allows for disabling the port entirely,
-        while ``network.port_range`` defines the range of ports rTorrent will
-        consider for use. If ``network.port_random`` is false, the range will
-        be scanned in sequence until a useable one is found. If no suitable
-        ports are found, rTorrent will fail to start.
+        while ``network.port_range`` defines the range of ports
+        rTorrent will consider for use. If ``network.port_random`` is
+        false, the range will be scanned in sequence until a usable
+        one is found. If no suitable ports are found, rTorrent will
+        fail to start. ``port_range`` is an alias for
+        ``network.port_range.set``. ``port_random`` is an alias for
+        ``network.port_random.set``
 
     network.proxy_address
     network.proxy_address.set
@@ -193,8 +202,19 @@
            network.proxy_address.set = <address> ≫ 0
 
         Controls the proxy for peer connections. This uses the CONNECT
-        HTTP call to set up the proxied connection, so the target
-        must support proxying with that method.
+        HTTP 1.0 call to set up the proxied connection, so the target
+        must support proxying with that method. If a port is not set
+        for the address, it is automatically set to `80`.
+
+        Example:
+
+        .. code-black:: ini
+
+           network.proxy_address.set=proxy.example.com:8080
+
+        Note that when setting this to a hostname, a DNS lookup
+        happens during the set, and the command only succeeds if the
+        DNS lookup succeeds as well.
 
     network.receive_buffer.size
     network.receive_buffer.size.set
@@ -232,7 +252,9 @@
         to modify the ``SO_DONTROUTE`` flag.
 
 
+    scgi_local
     network.scgi.open_local
+    scgi_port
     network.scgi.open_port
 
         .. code-block:: ini
@@ -249,6 +271,10 @@
             execute *arbitrary* commands with the permission of the *rTorrent* runtime user.
             Most people don't realize that, now you do! Also, **never** use any other address than
             ``127.0.0.1`` with it.
+
+         ``scgi_local`` is an alias for
+         ``network.scgi.open_local``. ``scgi_port`` is an alias for
+         ``network.scgi.open_port``.
 
 
     network.tos.set

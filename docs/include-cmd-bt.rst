@@ -270,11 +270,14 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
         **TODO**
 
+    encryption
     protocol.encryption.set
 
         .. code-block:: ini
 
             protocol.encryption.set = string ‹flags› ≫ 0
+
+        ``encryption`` is an alias for ``protocol.encryption.set``.
 
         This command takes a comma-separated list of flags, as seen in :term:`strings.encryption`,
         and uses them to determine how to handle connections to other peers (i.e. tracker and DHT

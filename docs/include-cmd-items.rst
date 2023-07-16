@@ -1096,7 +1096,6 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
         :term:`f.priority` for commands relating to file prioritization.
 
 
-    d.tracker_alias
     d.tracker_domain
 
         .. rubric:: *rTorrent-PS only*
@@ -1106,7 +1105,11 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
         The chosen tracker is the first HTTP one with active peers (seeders or leechers),
         or else the first one.
 
-        ``d.tracker_alias`` (1.1+ only) is basically the same,
+    d.tracker_alias
+
+        .. rubric:: *rTorrent-PS 1.1+ only*
+
+        ``d.tracker_alias`` is basically the same as :term:`d.tracker_domain`,
         but uses the mappings defined by :term:`trackers.alias.set_key` to transform its return value.
         The main use-case for that is to be able to sort the `rTorrent-PS` ``trackers`` view
         by the same values as shown to the very right of the terminal.

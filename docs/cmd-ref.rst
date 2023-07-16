@@ -116,6 +116,10 @@ TODO (Groups)
 
     trackers.alias.items
 
+        *New in version rTorrent-PS 1.1*
+
+        .. versionadded:: rTorrent-PS-1.1+
+
         Returns all the mappings in the form ``«domain»=«alias»`` as a list.
 
         Note that domains that were not explicitly defined so far, but shown
@@ -161,7 +165,6 @@ TODO (singles)
 
     print
     add_peer
-    bind
     catch
     check_hash
     connection_leech
@@ -169,9 +172,6 @@ TODO (singles)
     download_rate
     encoding.add
     encoding_list
-    encryption
-    group.seeding.ratio.command
-    ip
     key_layout
     max_downloads
     max_downloads_div
@@ -187,11 +187,7 @@ TODO (singles)
     min_peers_seed
     min_uploads
     on_ratio
-    port_random
-    port_range
     proxy_address
-    scgi_local
-    scgi_port
     upload_rate
     fi.filename_last
     fi.is_file
