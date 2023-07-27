@@ -62,6 +62,9 @@
         `curl documentation <https://curl.se/docs/manpage.html#-x>`_
         for more information.
 
+        Related: See :term:`network.proxy_address` for proxying peer
+        connections.
+
 
     network.http.cacert
     network.http.cacert.set
@@ -208,7 +211,7 @@
 
         Example:
 
-        .. code-black:: ini
+        .. code-block:: ini
 
            network.proxy_address.set=proxy.example.com:8080
 
