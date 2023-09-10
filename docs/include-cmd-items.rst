@@ -1020,8 +1020,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
             d.tracker_numwant = ‹hash› ≫ value ‹numwant›
             d.tracker_numwant.set = ‹hash›, value ‹numwant› ≫ 0
 
-        Controls the `optional numwant parameter`_ sent to the tracker. By default it's set to ``-1``, and *rTorrent*
-        only sends ``numwant`` if it is greater than 0.
+        Controls the `optional numwant parameter`_ sent to the
+        tracker. By default it's set to the value of
+        :term:`trackers.numwant`, which itself defaults to ``-1``, and
+        *rTorrent* only sends ``numwant`` if it is greater than 0.
 
 
     d.up.choke_heuristics

@@ -107,12 +107,39 @@ TODO (Groups)
 
     trackers.disable
     trackers.enable
+
+        .. code-block:: ini
+
+            trackers.disable = ‹arg› ≫ 0
+            trackers.enable = ‹arg› ≫ 0
+
+        Respectively enables or disables trackers across all
+        downloads. While an argument is required, it is ignored. If
+        :term:`trackers.use_udp` is false, UDP trackers will not be
+        enabled.
+
     trackers.numwant
     trackers.numwant.set
+
+        .. code-block:: ini
+
+            trackers.numwant = ‹hash› ≫ value ‹numwant›
+            trackers.numwant.set = ‹hash›, value ‹numwant› ≫ 0
+
+        Sets the default value for :term:`d.tracker_numwant`. Defaults
+        to ``-1``.
+
     trackers.use_udp
     trackers.use_udp.set
 
-        **TODO**
+        .. code-block:: ini
+
+            trackers.use_udp = bool (0 or 1)
+            trackers.use_udp.set = bool (0 or 1) ≫ 0
+
+        If set to false, newly added torrents will have all UDP
+        trackers set to disabled. It's still possible to manually
+        enable them afterwards.
 
     trackers.alias.items
 
