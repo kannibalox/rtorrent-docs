@@ -216,8 +216,6 @@ TODO (singles)
     on_ratio
     proxy_address
     upload_rate
-    fi.filename_last
-    fi.is_file
     file.append
     file.prioritize_toc
     keys.layout
@@ -225,6 +223,11 @@ TODO (singles)
 
         **TODO**
 
+    fi.filename_last
+    fi.is_file
+
+        Reserved for internal use in the file list screen. Cannot be
+        used via RPC.
 
 .. _intermediate-commands:
 
