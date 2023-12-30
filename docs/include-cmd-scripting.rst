@@ -1163,7 +1163,7 @@ see the ``math.sub`` examples below.
 Value Conversion & Formatting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``to_*`` forms are **deprecated**.
+The ``to_*`` forms are **deprecated** and are only provided for reference.
 
 .. glossary::
 
@@ -1174,7 +1174,15 @@ The ``to_*`` forms are **deprecated**.
     to_mb
     to_xb
 
-        **TODO**
+        .. code-block:: ini
+
+            convert.kb = ‹value› ≫ string
+            convert.mb = ‹value› ≫ string
+            convert.xb = ‹value› ≫ string
+
+        Converts a value to KiB, MiB, or XiB string respectively,
+        where ``X`` is the most appropriate prefix from K, M, G, T or
+        the value itself.
 
     convert.date
     convert.elapsed_time
