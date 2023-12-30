@@ -323,7 +323,8 @@ Commands in this group control aspects of the `curses` UI.
 
             view.add=‹view-name› ≫ 0
 
-        Create a new view with the given name
+        Create a new view with the given name. By default the view
+        contains no items.
 
     view.list
 
@@ -356,11 +357,45 @@ Commands in this group control aspects of the `curses` UI.
         **TODO**
 
     view.filter
+
+        .. code-block:: ini
+
+           view.filter=‹view-name›,‹filter› ≫ 0
+
+        Sets the filter for the view. ``filter`` is a function that
+        will be run against each download to determine if it should be
+        included in the view. Note that views will not re-filter
+        themselves automatically, either set up a :term:`schedule2`,
+        or use :term:`view.filter_on` to keep the view up to date.
+
+        Examples from main.cc:
+
+        .. code-block:: ini
+
+           view.filter = complete,((d.complete))
+           view.filter = hashing,((d.hashing))
+
     view.filter_all
     view.filter_download
-    view.filter_on
 
         **TODO**
+
+    view.filter_on
+
+        .. code-block:: ini
+
+           view.filter=‹view-name›,‹event-name>,... ≫ 0
+
+        Tell *rTorrent* to re-filter the named view on each
+        ``event-name``. ``event-name`` may be specified multiple times
+        to allow for re-filtering on multiple different events.
+
+        Examples from main.cc:
+
+        .. code-block:: ini
+
+           view.filter_on = hashing,event.download.hash_queued,event.download.hash_removed
+           view.filter_on = complete,event.download.hash_done,event.download.hash_failed,event.download.hash_final_failed,event.download.finished
 
     view.set
     view.set_visible
