@@ -89,7 +89,7 @@
 
     strings.tracker_event
 
-        .. rubric:: *since rTorrent 0.9.7*
+        .. versionadded:: 0.9.7
 
         .. hlist::
             :columns: 3
@@ -103,7 +103,7 @@
 
     strings.log_group
 
-        .. rubric:: *since rTorrent 0.9.7*
+        .. versionadded:: 0.9.7
 
         .. hlist::
             :columns: 3

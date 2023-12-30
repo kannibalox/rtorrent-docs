@@ -135,7 +135,7 @@ Commands related to the operating system and the XMLRPC API.
     system.daemon
     system.daemon.set
 
-        .. rubric:: *since rTorrent 0.9.7*
+        .. versionadded:: 0.9.7
 
         When set to true, `rTorrent` starts in the background without any `curses` UI.
         It can then only be controlled via XMLRPC commands and POSIX signals.
@@ -146,7 +146,7 @@ Commands related to the operating system and the XMLRPC API.
     system.shutdown.normal
     system.shutdown.quick
 
-        .. rubric:: *since rTorrent 0.9.7*
+        .. versionadded:: 0.9.7
 
         These **do** shut down `rTorrent` – either quickly, or with waiting for
         `BitTorrent` stop events to be sent to trackers of active items.
@@ -200,7 +200,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.client_version.as_value
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         .. code-block:: ini
 
@@ -212,7 +212,7 @@ Commands related to the operating system and the XMLRPC API.
         :term:`system.has` should be preferred though to write configuration that
         works across some client version range.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: console
 
@@ -248,7 +248,9 @@ Commands related to the operating system and the XMLRPC API.
 
     system.env
 
-        .. rubric:: *since rTorrent-PS 0.x / rTorrent 0.9.7*
+        .. versionadded:: 0.9.7
+
+        *New in rTorrent-PS 0.X*
 
         .. code-block:: ini
 
@@ -257,7 +259,7 @@ Commands related to the operating system and the XMLRPC API.
         Query the value of an environment variable,
         returns an empty string if ``$varname`` is not defined.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: ini
 
@@ -318,7 +320,7 @@ Commands related to the operating system and the XMLRPC API.
     system.has
     system.has.list
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         .. code-block:: ini
 
@@ -387,7 +389,7 @@ Commands related to the operating system and the XMLRPC API.
     system.has.private_methods
     system.has.public_methods
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         .. code-block:: ini
 
@@ -444,7 +446,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.random
 
-        .. rubric:: *rTorrent-PS 1.0+ only*
+        *New in rTorrent-PS 1.0+ only*
 
         .. code-block:: ini
 
@@ -624,7 +626,7 @@ Commands related to the operating system and the XMLRPC API.
 
     log.messages
 
-        .. rubric:: *rTorrent-PS 0.x+ only*
+        *rTorrent-PS 0.x+ only*
 
         .. code-block:: ini
 
@@ -635,7 +637,7 @@ Commands related to the operating system and the XMLRPC API.
         current date and time in ISO8601 format. If an empty path is passed, the
         file is closed.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: ini
 

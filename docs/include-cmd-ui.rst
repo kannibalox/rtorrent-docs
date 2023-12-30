@@ -117,7 +117,7 @@ Commands in this group control aspects of the `curses` UI.
     ui.color.‹type›.set
     ui.color.‹type›.index
 
-        .. rubric:: *rTorrent-PS 0.x+ only*
+        *New in rTorrent-PS 0.x+ only*
 
         .. code-block:: ini
 
@@ -150,14 +150,14 @@ Commands in this group control aspects of the `curses` UI.
     ui.canvas_color
     ui.canvas_color.set
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         *Not working right now.*
 
 
     ui.column.render
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         This is a multi-command that holds the column layout specifications
         for the customizable *canvas v2* display in `rTorrent-PS` version 1.1+,
@@ -168,7 +168,7 @@ Commands in this group control aspects of the `curses` UI.
 
     ui.column.spec
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         .. code-block:: ini
 
@@ -197,7 +197,7 @@ Commands in this group control aspects of the `curses` UI.
     ui.column.is_hidden
     ui.column.hidden.list
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         .. code-block:: ini
 
@@ -222,7 +222,7 @@ Commands in this group control aspects of the `curses` UI.
     ui.column.sacrificed.toggle
     ui.column.sacrificial.list
 
-        .. rubric:: *rTorrent-PS 1.1+ only*
+        *New in rTorrent-PS 1.1+ only*
 
         The ``ui.column.sacrificed`` value is *false* (0) by default,
         and can set set as usual.
@@ -238,7 +238,7 @@ Commands in this group control aspects of the `curses` UI.
     ui.focus.page_size
     ui.focus.page_size.set
 
-        .. rubric:: *rTorrent-PS 0.x+ only*
+        *New in rTorrent-PS 0.x+ only*
 
         These commands support quick paging through the download list,
         and jumping to the start or end of it.

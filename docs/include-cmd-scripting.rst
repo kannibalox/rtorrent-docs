@@ -210,7 +210,7 @@
         Internally, this is used to clear old event handlers when setting
         new ones with :term:`view.filter_on`.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: console
 
@@ -319,7 +319,7 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
 
         Be aware that during startup these view names can be *empty* strings!
 
-        .. rubric:: Event handler example
+        Example:
 
         .. code-block:: ini
 
@@ -356,7 +356,7 @@ just like a cron job, but with a resolution of seconds.
         ``start`` and ``interval`` may optionally use a time format like ``[dd:]hh:mm:ss``.
         An interval of ``07:00:00:00`` would mean weekly execution.
 
-        .. rubric:: Examples
+        Examples:
 
         .. code-block:: ini
 
@@ -473,7 +473,7 @@ Importing Script Files
         If you're nesting imports, relative filenames are resolved using :term:`system.cwd`,
         and *not* based on the location of the importing file.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: ini
 
@@ -494,7 +494,7 @@ Importing Script Files
         exception when called *outside* of an imported file.
 
 
-        .. rubric:: Example: Quick toggle of experimental configuration
+        Example: Quick toggle of experimental configuration:
 
         Add a commented ``import.return`` into a configuration file,
         above some code you work on, at the very end of the file.
@@ -506,7 +506,7 @@ Importing Script Files
             «here be dragons»
 
 
-        .. rubric:: Example: Protecting imports that use new features
+        Example: Protecting imports that use new features:
 
         First, protect the import like this (to make it compatible with older builds):
 
@@ -598,7 +598,7 @@ Conditions (if/branch/do)
         Otherwise you'd need to use ``"cmd1=… ; cmd2=…; …"`` for such a sequence,
         with all the usual escaping problems when calling commands with several arguments.
 
-        .. rubric:: Examples
+        Examples:
 
         .. code-block:: ini
 
@@ -722,7 +722,7 @@ Conditional Operators
         The timestamps are UNIX ones, like created by :term:`system.time_seconds`.
         The result is ``0`` if the timestamp is empty / zero.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: ini
 
@@ -758,7 +758,7 @@ Conditional Operators
         If all fields are equal, then items are ordered in a random,
         but stable fashion.
 
-        .. rubric:: Example: Sort a view by message *and* name
+        Example: Sort a view by message *and* name:
 
         .. code-block:: ini
 
@@ -788,7 +788,7 @@ String Functions
         like passing an empty string where a command is expected via ``(cat,)``,
         or text starting with a dollar sign using ``(cat,{$})``.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: ini
 
@@ -806,7 +806,7 @@ String Functions
 
         Returns the length of an UTF-8 encoded string in terms of Unicode characters.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -831,7 +831,7 @@ String Functions
         If you pass more than two arguments,
         *any* match with the 2nd to last argument will return *true* (1).
 
-        .. rubric:: Examples
+        Examples:
 
         .. code-block:: ini
 
@@ -858,7 +858,7 @@ String Functions
         Checks if a given string contains any of the strings following it.
         The variant with ``_i`` is case-ignoring, but *only* works for pure ASCII needles.
 
-        .. rubric:: Example
+        Example:
 
         .. code-block:: console
 
@@ -883,7 +883,7 @@ String Functions
         then *«default»* is returned when provided,
         instead of an empty string.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -906,7 +906,7 @@ String Functions
 
         *«tail»* determines the maximal length of the trailing part, with a default of 5.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -924,7 +924,7 @@ String Functions
         Works just like :term:`cat` (including conversion of the passed objects to strings),
         but concatenates the arguments using a provided delimiter.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -943,7 +943,7 @@ String Functions
         If that delimiter is the empty string, you'll get a Unicode character array
         of the first argument.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -969,7 +969,7 @@ String Functions
         numbers is a common use-case. Note that for numbers that might be negative,
         only padding with spaces makes sense.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -997,7 +997,7 @@ String Functions
         Their order is of no importance, segments are removed until none of them fits anymore,
         or the final result is empty.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/string.txt
             :language: console
@@ -1020,7 +1020,7 @@ String Functions
 
         ``string.replace`` substitutes any occurrence of the old text by the new one.
 
-        .. rubric:: Examples
+        Examples:
 
         .. code-block:: console
 
@@ -1049,7 +1049,7 @@ Array Functions
 
         **TODO**
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/array.txt
             :language: console
@@ -1094,7 +1094,7 @@ see the ``math.sub`` examples below.
         These share the same code, so the errors shown in the following examples
         usually apply to all commands, and are not repeated for each operator.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/math.txt
             :language: console
@@ -1130,7 +1130,7 @@ see the ``math.sub`` examples below.
 
         Functions to calculate the minimum, maximum, element count, average, or median over the input values.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/math.txt
             :language: console
@@ -1217,7 +1217,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
         If ``timestamp`` is zero, the result is ``⋅␣⋅⋅␣``.
         If ``timebase`` is missing or zero, the current time is used instead.
 
-        .. rubric:: Examples
+        Examples:
 
         .. literalinclude:: rtorrent-ps/tests/commands/misc.txt
             :language: console
