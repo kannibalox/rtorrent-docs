@@ -1293,10 +1293,14 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
             f.prioritize_last.disable = ‹infohash› ≫ 0
             f.prioritize_last.enable = ‹infohash› ≫ 0
 
-        This determines how files are prioritized when :term:`f.priority` is set to normal.
-        While any high (i.e. ``2``) priority files take precedence, when a torrent is started, the rest of the files are sorted
-        according to which are marked as ``prioritize_first`` vs ``prioritize_last``. If both flags are set,
-        ``prioritize_first`` is checked first. This sorting happens whenever :term:`d.update_priorities` is called.
+        This determines how files are prioritized when
+        :term:`f.priority` is set to normal.  While any high
+        (i.e. ``2``) priority files take precedence, when a torrent is
+        started, the rest of the files are sorted according to which
+        are marked as ``prioritize_first`` vs ``prioritize_last``. If
+        both flags are set, ``prioritize_first`` is checked
+        first. This sorting happens whenever
+        :term:`d.update_priorities` is called.
 
         See also :term:`file.prioritize_toc`.
 
@@ -1322,7 +1326,14 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
     f.range_first
     f.range_second
 
-        **TODO**
+        .. code-block:: ini
+
+            f.range_first = ‹infohash› ≫ value ‹bytes›
+            f.range_second = ‹infohash› ≫ value ‹chunks›
+
+         These mark the range of chunks the file is present in. Note
+         that ``f.range_second`` is currently *exclusive*, meaning
+         that the file is not actually in that chunk.
 
     f.size_bytes
     f.size_chunks
@@ -1332,9 +1343,10 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
             f.size_bytes = ‹infohash› ≫ value ‹bytes›
             f.size_chunks = ‹infohash› ≫ value ‹chunks›
 
-        Returns the number of bytes and chunks in the file respectively. If the file is only partially in some chunks,
-        those are included in the count. This means the sum of all ``f.size_chunks`` can be
-        larger than :term:`d.size_chunks`.
+        Returns the number of bytes and chunks in the file
+        respectively. If the file is only partially in some chunks,
+        those are included in the count. This means the sum of all
+        ``f.size_chunks`` can be larger than :term:`d.size_chunks`.
 
 
 .. _p-commands:
