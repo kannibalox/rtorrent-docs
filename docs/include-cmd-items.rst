@@ -1,6 +1,6 @@
 .. _d-commands:
 
-`d.*` commands
+``d.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 See the hint at the start of this chapter regarding the (sometimes implicit) *target* argument.
@@ -1164,7 +1164,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
 .. _f-commands:
 
-`f.*` commands
+``f.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These commands can be used as arguments in a :term:`f.multicall`.
@@ -1351,7 +1351,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
 .. _p-commands:
 
-`p.*` commands
+``p.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These commands can be used as arguments in a :term:`p.multicall`.
@@ -1574,7 +1574,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
 .. _t-commands:
 
-`t.*` commands
+``t.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These commands can be used as arguments in a :term:`t.multicall`.
@@ -1830,7 +1830,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
 .. _load-commands:
 
-`load.*` commands
+``load.*`` commands
 ^^^^^^^^^^^^^^^^^
 
 The client may be configured to check a directory for new metafiles and load them.
@@ -1931,7 +1931,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
 
 .. _session-commands:
 
-`session.*` commands
+``session.*`` commands
 ^^^^^^^^^^^^^^^^^^^^
 
 .. glossary::

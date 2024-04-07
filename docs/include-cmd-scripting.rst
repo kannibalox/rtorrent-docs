@@ -1,6 +1,6 @@
 .. _method-commands:
 
-`method.*` commands
+``method.*`` commands
 ^^^^^^^^^^^^^^^^^^^
 
 .. glossary::
@@ -230,7 +230,7 @@
 
 .. _event-commands:
 
-`event.*` commands
+``event.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 rTorrent events are merely :ref:`multi commands <multi-type>`
@@ -1067,13 +1067,13 @@ Values can either be of type *value* or *string* –
 strings are automatically converted,
 with an error thrown when the string contains something other than digits.
 
-The handled values are restricted to integer arithmetic (as in `bash`),
+The handled values are restricted to integer arithmetic (as in ``bash``),
 because `rTorrent` has no floating point type.
 Division, average, and median always round down.
 
 All commands support multiple arguments, including lists.
 List arguments are handled recursively,
-as-if there were a nested `math.*` call of the same type,
+as-if there were a nested ``math.*`` call of the same type,
 with the list as its arguments.
 
 When using multiple list arguments, or mixing them with plain numbers,
