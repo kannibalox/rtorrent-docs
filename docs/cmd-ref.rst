@@ -143,8 +143,6 @@ TODO (Groups)
 
     trackers.alias.items
 
-        *New in version rTorrent-PS 1.1*
-
         .. versionadded:: rTorrent-PS-1.1+
 
         Returns all the mappings in the form ``«domain»=«alias»`` as a list.
