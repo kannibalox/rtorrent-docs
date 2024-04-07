@@ -420,27 +420,29 @@ and the amount of peers requested in tracker announces.
     throttle.max_downloads.set
     throttle.max_downloads.div
     throttle.max_downloads.div.set
-    throttle.max_downloads.div._val
-    throttle.max_downloads.div._val.set
     throttle.max_uploads
     throttle.max_uploads.set
     throttle.max_uploads.div
     throttle.max_uploads.div.set
-    throttle.max_uploads.div._val
-    throttle.max_uploads.div._val.set
-
-        **TODO**
-
     throttle.max_downloads.global
     throttle.max_downloads.global.set
-    throttle.max_downloads.global._val
-    throttle.max_downloads.global._val.set
     throttle.max_uploads.global
     throttle.max_uploads.global.set
-    throttle.max_uploads.global._val
-    throttle.max_uploads.global._val.set
 
         **TODO**
+
+    throttle.max_uploads.div._val
+    throttle.max_uploads.div._val.set
+    throttle.max_downloads.div._val
+    throttle.max_downloads.div._val.set
+    throttle.max_uploads.global._val
+    throttle.max_uploads.global._val.set
+    throttle.max_downloads.global._val
+    throttle.max_downloads.global._val.set
+
+        The ``_val`` variants are for internal use only, and should not
+        be used. Specifically, they ensure the UI is updated to match
+        any new values.
 
     throttle.min_downloads
     throttle.min_downloads.set
