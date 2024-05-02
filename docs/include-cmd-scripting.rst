@@ -306,7 +306,7 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
 
         .. versionadded:: 0.9.8
 
-        *New in rTorrent-PC version 1.1*
+        *New in rTorrent-PS version 1.1*
 
         .. code-block:: ini
 
