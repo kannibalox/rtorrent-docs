@@ -24,7 +24,7 @@ Call operating system commands, possibly catching their output for use within *r
 
         .. code-block:: rtorrentrc
 
-            execute.throw[.bg] = {command, arg1, arg2, ...} ≫ 0
+            execute.throw[.bg] = string command, string arg1, string arg2, ... ≫ 0
 
         This will execute a system command with the provided arguments.
         These commands either raise an error or return ``0``.
@@ -50,7 +50,7 @@ Call operating system commands, possibly catching their output for use within *r
 
         .. code-block:: rtorrentrc
 
-            execute.nothrow[.bg] = {command, arg1, arg2, ...} ≫ value ‹exit status›
+            execute.nothrow[.bg] = string command, string arg1, string arg2, ... ≫ value ‹exit status›
 
         Like :term:`execute.throw`, but return the command's exit code
         (*warning:* due to a bug the return code is shifted by 8 bits,
@@ -65,7 +65,7 @@ Call operating system commands, possibly catching their output for use within *r
 
         .. code-block:: rtorrentrc
 
-            execute.capture[_nothrow] = {command, arg1, arg2, ...} ≫ string ‹stdout›
+            execute.capture[_nothrow] = string command, string arg1, string arg2, ... ≫ string ‹stdout›
 
         Like ``execute.[no]throw``, but returns the command's standard output.
         The ``nothrow`` variant returns any output that was written before an error,
@@ -241,8 +241,8 @@ Commands related to the operating system and the XMLRPC API.
 
             # rTorrent-PS only
             system.colors.enabled ≫ bool (0 or 1)
-            system.colors.max ≫ int ‹colors›
-            system.colors.rgb ≫ int
+            system.colors.max ≫ value ‹colors›
+            system.colors.rgb ≫ value
 
         Returns some ``ncurses`` system state related to colors (in rTorrent-PS only).
 
@@ -336,7 +336,7 @@ Commands related to the operating system and the XMLRPC API.
         .. code-block:: rtorrentrc
 
             system.has = ‹capability› ≫ bool (0 or 1)
-            system.has.list = ≫ list of string (capabilities)
+            system.has.list = ≫  list[string] ‹capabilities›
 
         This can be used to write configuration files that work on older builds
         (and on vanilla rTorrent), even when new features and commands are introduced.
@@ -404,8 +404,8 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            system.has.private_methods = ≫ list of string (method names)
-            system.has.public_methods = ≫ list of string (method names)
+            system.has.private_methods ≫ list[string] ‹method names›
+            system.has.public_methods ≫ list[string] ‹method names›
 
         The ``system.has.private_methods`` and ``system.has.public_methods`` commands
         return a list of private / public methods, either built-in or defined via configuration.
@@ -517,7 +517,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.add_output = ‹scope›, ‹name› ≫ 0
+            log.add_output = string ‹scope›, string ‹name› ≫ 0
 
         This command adds another logging scope to a named log file,
         opened by one of the :term:`log.open_file` commands.
@@ -552,7 +552,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.execute = ‹path› ≫ 0
+            log.execute = string ‹path› ≫ 0
 
         (Re-)opens a log file that records commands called via :ref:`execute-commands`,
         including their return code and output.
@@ -572,7 +572,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.xmlrpc = ‹path› ≫ 0
+            log.xmlrpc = string ‹path› ≫ 0
 
         (Re-)opens a log file that contains a log of commands executed via XMLRPC.
         This logs the raw SCGI and XMLRPC call and response for each request.
@@ -593,7 +593,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.open_file = ‹name›, ‹log file path›[, ‹scope›…] ≫ 0
+            log.open_file = string ‹name›, string ‹log file path›[, string ‹scope›…] ≫ 0
             log.open_gz_file
             log.open_file_pid
             log.open_gz_file_pid
@@ -629,7 +629,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.vmmap.dump = ‹dump file path› ≫ 0
+            log.vmmap.dump = string ‹dump file path› ≫ 0
 
         Dumps all memory mapping regions to the given file,
         each line contains a region in the format ``‹begin›-‹end› [‹size in KiB›k]``.
@@ -641,7 +641,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            log.messages = ‹log file path› ≫ 0
+            log.messages = string ‹log file path› ≫ 0
 
         (Re-)opens a log file that contains the messages normally only visible
         on the main panel and via the ``l`` key. Each line is prefixed with the

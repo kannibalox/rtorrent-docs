@@ -49,6 +49,10 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     dht.statistics
 
+        .. code-block:: rtorrentrc
+
+            dht.statistics ≫ dictionary ‹statistics›
+
         Returns ``{'active': 0, 'dht': 'disable', 'throttle': ''}`` when DHT is off,
         and …
 
@@ -142,14 +146,14 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
         .. code-block:: rtorrentrc
 
-             pieces.preload.type ≫ value ‹enum›
-             pieces.preload.type.set = value ‹enum› ≫ 0
+             pieces.preload.type ≫ value ‹type›
+             pieces.preload.type.set = value ‹type› ≫ 0
 
         When a piece is to be uploaded to a peer, *rTorrent* can preload the piece of the file before
         it does the non-blocking write to the network. This will not complete the whole piece
         if parts of the piece is not already in memory, having instead to try again later.
 
-        Possible values for ``value`` are:
+        Possible values for ``type`` are:
 
         * ``0`` – off
         * ``1`` – madvise
@@ -279,14 +283,18 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
         ``encryption`` is an alias for ``protocol.encryption.set``.
 
-        This command takes a comma-separated list of flags, as seen in :term:`strings.encryption`,
-        and uses them to determine how to handle connections to other peers (i.e. tracker and DHT
-        connections are not effected by this setting). The flags are all applied simultaneously, which
-        means that certain applied flags may not take effect (e.g. for ``prefer_plaintext,require_rc4``,
-        plaintext will never be used despite the flag being applied). rTorrent has support for both
-        plaintext "encryption" (uses no extra CPU cycles, provides only obfuscation of the header) and
-        RC4 encryption (encrypts the entire header and message, at the cost of a few CPU cycles),
-        with flags to control the behavior of both.
+        This command takes a comma-separated list of flags, as
+        enumerated in :term:`strings.encryption`, and uses them to
+        determine how to handle connections to other peers
+        (i.e. tracker and DHT connections are not effected by this
+        setting). The flags are all applied simultaneously, which
+        means that certain applied flags may not take effect (e.g. for
+        ``prefer_plaintext,require_rc4``, plaintext will never be used
+        despite the flag being applied). rTorrent has support for both
+        plaintext "encryption" (uses no extra CPU cycles, provides
+        only obfuscation of the header) and RC4 encryption (encrypts
+        the entire header and message, at the cost of a few CPU
+        cycles), with flags to control the behavior of both.
 
         * ``none`` – The default, don't attempt any encryption.
         * ``allow_incoming`` – Allow incoming encrypted connections from other peers.
@@ -320,25 +328,27 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 `throttle.*` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Throttles are names for bandwidth limitation rules (for upload, download, or both).
-The throttle assigned to the item in focus can be changed using ``Ctrl-T``
-– it will rotate through all defined ones.
+Throttles are names for bandwidth limitation rules (for upload,
+download, or both).  The throttle assigned to the item in focus can be
+changed using ``Ctrl-T`` – it will rotate through all defined ones.
 
-There are two system throttles, ``NULL`` and the one with an empty name.
-``NULL`` is a special throttle for *unlimited*, and the latter is the *global* throttle,
-which is the default for new items and what's shown in the status bar on the left
-as ``[Throttle ‹UP›/‹DOWN› KB]``.
+There are two system throttles, ``NULL`` and the one with an empty
+name.  ``NULL`` is a special throttle for *unlimited*, and the latter
+is the *global* throttle, which is the default for new items and
+what's shown in the status bar on the left as ``[Throttle ‹UP›/‹DOWN›
+KB]``.
 
 **TODO** Explain how throttles work, borrowing from the global throttle.
 
-Other commands in this group determine the limits for upload / download slots,
-and the amount of peers requested in tracker announces.
+Other commands in this group determine the limits for upload /
+download slots, and the amount of peers requested in tracker
+announces.
 
 .. warning::
 
     Note that since named throttles *borrow* from the global throttle,
-    the global one has to be set to a non-zero value for the named ones to work
-    (because borrowing from ∞ means there is no limit).
+    the global one has to be set to a non-zero value for the named
+    ones to work (because borrowing from ∞ means there is no limit).
 
 
 .. glossary::

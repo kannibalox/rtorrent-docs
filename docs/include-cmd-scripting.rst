@@ -9,7 +9,7 @@
 
         .. code-block:: rtorrentrc
 
-            method.insert = ‹name›, ‹type›[|‹sub-type›…][, ‹definition›] ≫ 0
+            method.insert = string ‹name›, string ‹type›[|‹sub-types›…][, string ‹definition›] ≫ 0
 
         The general way to define *any* kind of command.
         See :ref:`object-types` for the possible values in the 2nd argument,
@@ -178,7 +178,7 @@
 
             method.set_key = ‹name›, ‹key›[, ‹definition›] ≫ 0
             method.has_key = ‹name›, ‹key› ≫ bool (0 or 1)
-            method.list_keys = ‹name› ≫ list of strings
+            method.list_keys = ‹name› ≫ list[string] ‹method names›
 
         Set entries in a ``multi`` method, query a single key, or list them all.
         If you omit the definition in a ``method.set_key`` call, the key is erased
@@ -197,8 +197,8 @@
 
         .. code-block:: rtorrentrc
 
-            method.rlookup = ‹key› ≫ list of strings
-            method.rlookup.clear = ‹key› ≫ 0
+            method.rlookup = string ‹key› ≫ list[string] ‹method names›
+            method.rlookup.clear = string ‹key› ≫ 0
 
         ``method.rlookup`` returns a list of multi-method names
         that have a reverse lookup entry for the given key.
@@ -222,7 +222,7 @@
 
         .. code-block:: rtorrentrc
 
-            method.redirect = ‹alias›, ‹target› ≫ 0
+            method.redirect = string ‹alias›, string ‹target› ≫ 0
 
         Defines an alias for an existing command, the arguments are command names.
         Aliases cannot be changed, using the same alias name twice causes an error.
@@ -310,8 +310,8 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
 
         .. code-block:: rtorrentrc
 
-            event.view.hide = ‹new-view-name› ≫ 0
-            event.view.show = ‹old-view-name› ≫ 0
+            event.view.hide = string ‹new-view-name› ≫ 0
+            event.view.show = string ‹old-view-name› ≫ 0
 
         These events get called shortly before and after the download list canvas changes to a new view.
         Each gets passed the view name that is *not* available via :term:`ui.current_view`

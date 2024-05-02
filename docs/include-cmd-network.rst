@@ -11,8 +11,8 @@
 
        .. code-block:: rtorrentrc
 
-           network.bind_address ≫ ‹address›
-           network.bind_address.set = ‹address› ≫ 0
+           network.bind_address ≫ string ‹address›
+           network.bind_address.set = string ‹address› ≫ 0
 
        Allows binding to a specific interface. This option can only be set at
        startup. ``bind`` is an alias for ``network.bind_address``.
@@ -22,8 +22,8 @@
 
         .. code-block:: rtorrentrc
 
-           network.http.dns_cache_timeout ≫ ‹seconds›
-           network.http.dns_cache_timeout.set = ‹seconds› ≫ 0
+           network.http.dns_cache_timeout ≫  value ‹seconds›
+           network.http.dns_cache_timeout.set = value ‹seconds› ≫ 0
 
         Controls the `DNS cache expiry <https://curl.se/libcurl/c/CURLOPT_DNS_CACHE_TIMEOUT.html>`_
         (in seconds) for HTTP requests. The default is 60 seconds.
@@ -40,7 +40,7 @@
 
            network.http.current_open ≫ value ‹num›
            network.http.max_open ≫ value ‹max›
-           network.http.max_open.set = ‹max› ≫ 0
+           network.http.max_open.set = value ‹max› ≫ 0
 
         ``network.http.current_open`` returns the number of currently opened HTTP connections,
         and ``network.http.max_open`` determines the upper limit for simultaneous HTTP connections.
@@ -55,8 +55,8 @@
 
         .. code-block:: rtorrentrc
 
-           network.http.proxy_address ≫  <address>
-           network.http.proxy_address.set = <address> ≫ 0
+           network.http.proxy_address ≫  string ‹address›
+           network.http.proxy_address.set = string ‹address› ≫ 0
 
         Controls the HTTP proxy for announcements. See the
         `curl documentation <https://curl.se/docs/manpage.html#-x>`_
@@ -73,10 +73,10 @@
 
         .. code-block:: rtorrentrc
 
-            network.http.cacert ≫  <file>
-            network.http.cacert.set = <file> ≫ 0
-            network.http.capath ≫  <path>
-            network.http.capath.set = <path> ≫ 0
+            network.http.cacert ≫  string ‹file›
+            network.http.cacert.set = string ‹file› ≫ 0
+            network.http.capath ≫  string ‹dir›
+            network.http.capath.set = string ‹dir› ≫ 0
 
         Allows for controlling which certificates or certificate paths
         are used for validating HTTPS connections. By default the system
@@ -93,10 +93,10 @@
 
          .. code-block:: rtorrentrc
 
-            network.http.ssl_verify_host ≫ <bool> (0 or 1)
-            network.http.ssl_verify_host.set = <bool> (0 or 1) ≫ 0
-            network.http.ssl_verify_peer ≫ <bool> (0 or 1)
-            network.http.ssl_verify_peer.set = <bool> (0 or 1) ≫ 0
+            network.http.ssl_verify_host ≫ bool (0 or 1)
+            network.http.ssl_verify_host.set = bool (0 or 1) ≫ 0
+            network.http.ssl_verify_peer ≫ bool (0 or 1)
+            network.http.ssl_verify_peer.set = bool (0 or 1) ≫ 0
 
          Determines if how HTTPS connections are validated.
          By default, both the peer and the host are fully validated.
@@ -111,8 +111,8 @@
 
         .. code-block:: rtorrentrc
 
-           network.listen.backlog ≫ value <max>
-           network.listen.backlog.set = value <max> ≫ 0
+           network.listen.backlog ≫ value ‹max›
+           network.listen.backlog.set = value ‹max› ≫ 0
 
         Sets the max number of pending TCP connections allowed. This defaults to
         SOMAXCONN, which is 4096 on Linux 5.4+. Note that this is *not* a limit
@@ -122,7 +122,7 @@
 
         .. code-block:: rtorrentrc
 
-           network.listen.port = <port> ≫ 0
+           network.listen.port = value ‹port› ≫ 0
 
         Allows controlling what is reported as the incoming port to the
         tracker. This defaults to whatever port is picked from
@@ -134,8 +134,8 @@
 
         .. code-block:: rtorrentrc
 
-           network.local_address ≫ <address>
-           network.local_address.set = <address> ≫ 0
+           network.local_address ≫ string ‹address›
+           network.local_address.set = string ‹address› ≫ 0
 
         This allows binding to a specific network interface. By
         default it is blank, meaning it will bind to all network
@@ -147,8 +147,8 @@
 
          .. code-block:: rtorrentrc
 
-            network.max_open_files ≫ value <max>
-            network.max_open_files.set = value <max> ≫ 0
+            network.max_open_files ≫ value ‹max›
+            network.max_open_files.set = value ‹max› ≫ 0
 
         Controls the max number of open files allowed by the internal file
         manager. By default this is calculated dynamically based on the ``ulimit``.
@@ -159,9 +159,9 @@
 
         .. code-block:: rtorrentrc
 
-           network.max_open_sockets ≫ value <max>
-           network.max_open_sockets.set = value <max> ≫ 0
-           network.open_sockets ≫ value <active>
+           network.max_open_sockets ≫ value ‹max›
+           network.max_open_sockets.set = value ‹max› ≫ 0
+           network.open_sockets ≫ value ‹active›
 
         This controls the maximum number of open sockets allowed by
         the internal connection manager. By default this is calculated
@@ -179,12 +179,12 @@
 
         .. code-block:: rtorrentrc
 
-           network.port_open ≫ <bool> (0 or 1)
-           network.port_open.set = <bool> (0 or 1) ≫ 0
-           network.port_random ≫ <bool> (0 or 1)
-           network.port_random.set = <bool> (0 or 1) ≫ 0
-           network.port_range ≫ <range>
-           network.port_range.set = <range> ≫ 0
+           network.port_open ≫ bool (0 or 1)
+           network.port_open.set = bool (0 or 1) ≫ 0
+           network.port_random ≫ bool (0 or 1)
+           network.port_random.set = bool (0 or 1) ≫ 0
+           network.port_range ≫  string ‹range›
+           network.port_range.set = string ‹range› ≫ 0
 
         This set of options controls how the incoming port is picked.
         ``network.port_open`` allows for disabling the port entirely,
@@ -201,8 +201,8 @@
 
         .. code-block:: rtorrentrc
 
-           network.proxy_address ≫  <address>
-           network.proxy_address.set = <address> ≫ 0
+           network.proxy_address ≫  string ‹address›
+           network.proxy_address.set = string ‹address› ≫ 0
 
         Controls the proxy for peer connections. This uses the CONNECT
         HTTP 1.0 call to set up the proxied connection, so the target
@@ -227,9 +227,9 @@
         .. code-block:: rtorrentrc
 
            network.receive_buffer.size ≫ value ‹size›
-           network.receive_buffer.size.set = ‹size› ≫ 0
+           network.receive_buffer.size.set = value ‹size› ≫ 0
            network.send_buffer.size ≫ value ‹size›
-           network.send_buffer.size.set = ‹size› ≫ 0
+           network.send_buffer.size.set = value ‹size› ≫ 0
 
         Sets or gets the maximum socket receive / send buffer in bytes.
 
@@ -248,7 +248,7 @@
         .. code-block:: rtorrentrc
 
            network.scgi.dont_route ≫ bool (0 or 1)
-           network.scgi.dont_route.set = ‹bool› (0 or 1) ≫ 0
+           network.scgi.dont_route.set = bool (0 or 1) ≫ 0
 
         Enable / disable routing on SCGI connections,
         directly calling `setsockopt <https://linux.die.net/man/3/setsockopt>`_
@@ -263,7 +263,7 @@
         .. code-block:: rtorrentrc
 
            network.scgi.open_local = string ‹path› ≫ 0
-           network.scgi.open_port = string ‹domain_or_ip›:‹port› ≫ 0
+           network.scgi.open_port = string ‹domain_or_ip:port› ≫ 0
 
         Open up a Unix domain socket or a TCP port for SCGI communication (i.e. the XMLRPC socket).
         Only use *one* of these!
@@ -308,7 +308,7 @@
 
         .. code-block:: rtorrentrc
 
-           network.xmlrpc.dialect.set = ‹dialect [value 0…2]› ≫ 0
+           network.xmlrpc.dialect.set = value ‹dialect› ≫ 0
 
         Set the XMLRPC dialect to use, as defined by  ``xmlrpc-c``.
         The ``dialect`` parameter can have these values:
@@ -331,7 +331,7 @@
         .. code-block:: rtorrentrc
 
            network.xmlrpc.size_limit = ≫ value ‹bytes›
-           network.xmlrpc.size_limit.set = ‹max-size› ≫ 0
+           network.xmlrpc.size_limit.set = string ‹max bytes› ≫ 0
 
         Set or return the maximum size of any XMLRPC requests in bytes.
         Human-readable forms such as ``2M`` are also allowed (for 2 MiB, i.e. 2097152 bytes).
