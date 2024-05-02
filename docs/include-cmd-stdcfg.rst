@@ -54,7 +54,7 @@ See :ref:`config-deconstructed` for a detailed tour.
 
         .. rubric:: Definition
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert = d.data_path, simple,\
                 "if=(d.is_multi_file),\
@@ -90,7 +90,7 @@ In addition to the commands listed here, `pyrocore` also defines :term:`d.data_p
 
         .. rubric:: Definition
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert = d.session_file, simple, "cat=(session.path), (d.hash), .torrent"
 
@@ -213,7 +213,7 @@ In addition to the commands listed here, `pyrocore` also defines :term:`d.data_p
 
     pyro.collapsed_view.add
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pyro.collapsed_view.add = ‹view name› ≫ 0
 
@@ -222,7 +222,7 @@ In addition to the commands listed here, `pyrocore` also defines :term:`d.data_p
 
     pyro.view.collapsed.toggle
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pyro.view.collapsed.toggle = ‹view name› ≫ 0
 
@@ -232,7 +232,7 @@ In addition to the commands listed here, `pyrocore` also defines :term:`d.data_p
 
     pyro.view.toggle_visible
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pyro.view.toggle_visible = ‹view name› ≫ 0
 

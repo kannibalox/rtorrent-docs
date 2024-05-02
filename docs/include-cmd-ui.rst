@@ -12,7 +12,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. rubric:: *ui.current_view since rTorrent-PS 0.x / rTorrent 0.9.7*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             ui.current_view.set = ‹viewname› ≫ 0
             ui.current_view ≫ string ‹viewname›
@@ -56,7 +56,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. rubric:: *rTorrent-PS 0.x+ / 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # rTorrent-PS 0.x+ only
             ui.bind_key = ‹display›, ‹key›, "command=[...]" ≫ 0
@@ -79,7 +79,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. rubric:: Configuration Example
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Bind '^' to show the last "rtcontrol" result
             schedule2 = bind_view_rtcontrol, 1, 0,\
@@ -119,7 +119,7 @@ Commands in this group control aspects of the `curses` UI.
 
         *New in rTorrent-PS 0.x+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             ui.color.‹type›= ≫ string ‹color-spec›
             ui.color.‹type›.set=‹color-spec› ≫ 0
@@ -170,7 +170,7 @@ Commands in this group control aspects of the `curses` UI.
 
         *New in rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             ui.column.spec = ‹column index› ≫ string (column specification)
 
@@ -181,7 +181,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. rubric:: Examples
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Permanently remove the 'ignoring commands' column
             method.set_key = ui.column.render, (ui.column.spec, 130)
@@ -199,7 +199,7 @@ Commands in this group control aspects of the `curses` UI.
 
         *New in rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             ui.column.hide = ‹column index›[, …] ≫ 0
             ui.column.show = ‹column index›[, …] ≫ 0
@@ -319,7 +319,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.add
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.add=‹view-name› ≫ 0
 
@@ -328,7 +328,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.list
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.list ≫ [strings]
 
@@ -336,7 +336,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.size=‹view-name› ≫ value
 
@@ -344,7 +344,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.persistent
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.persistent=‹view-name› ≫ 0
 
@@ -358,7 +358,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.filter
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            view.filter=‹view-name›,‹filter› ≫ 0
 
@@ -370,7 +370,7 @@ Commands in this group control aspects of the `curses` UI.
 
         Examples from main.cc:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            view.filter = complete,((d.complete))
            view.filter = hashing,((d.hashing))
@@ -382,9 +382,9 @@ Commands in this group control aspects of the `curses` UI.
 
     view.filter_on
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
-           view.filter=‹view-name›,‹event-name>,... ≫ 0
+           view.filter=‹view-name›, ‹event-name›,... ≫ 0
 
         Tell *rTorrent* to re-filter the named view on each
         ``event-name``. ``event-name`` may be specified multiple times
@@ -392,7 +392,7 @@ Commands in this group control aspects of the `curses` UI.
 
         Examples from main.cc:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            view.filter_on = hashing,event.download.hash_queued,event.download.hash_removed
            view.filter_on = complete,event.download.hash_done,event.download.hash_failed,event.download.hash_final_failed,event.download.finished
@@ -413,7 +413,7 @@ Commands in this group control aspects of the `curses` UI.
 
     view.collapsed.toggle
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # rTorrent-PS 0.*+ only
             view.collapsed.toggle=‹view-name› ≫ 0
@@ -438,7 +438,7 @@ Commands in this group control aspects of the `curses` UI.
         Also when using `rTorrent-PS` before version 1.1,
         you should bind the current view toggle to a key, like this:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             schedule = bind_collapse,0,0,"ui.bind_key=download_list,*,view.collapsed.toggle="
 

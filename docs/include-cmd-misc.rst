@@ -195,7 +195,7 @@ These are ‘special’ and fall into no group.
 
         .. versionadded:: 0.9.8
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             try = string ‹command› ≫ 0
 
@@ -203,7 +203,7 @@ These are ‘special’ and fall into no group.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.open_file=rpc,rpc.log,rpc_events
             try="print=(system.client_version)"
@@ -216,7 +216,7 @@ These are ‘special’ and fall into no group.
 
         .. versionadded:: 0.9.7
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             directory.watch.added = ‹root folder path›, ‹handler command name› ≫ 0
 
@@ -231,7 +231,7 @@ These are ‘special’ and fall into no group.
 
         .. rubric:: Configuration Example
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             directory.watch.added = "~/Downloads/watch/", load.start_verbose
 

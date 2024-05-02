@@ -16,7 +16,7 @@ The :ref:`generated index <genindex>` also lists all the command names.
     to uniquely identify the *target* object. ‘Target’ is the term used for that 1st parameter in
     error messages and so on.
 
-      .. code-block:: ini
+      .. code-block:: rtorrentrc
 
          d.name = ‹hash› ≫ string ‹name›
 
@@ -108,7 +108,7 @@ TODO (Groups)
     trackers.disable
     trackers.enable
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             trackers.disable = ‹arg› ≫ 0
             trackers.enable = ‹arg› ≫ 0
@@ -121,7 +121,7 @@ TODO (Groups)
     trackers.numwant
     trackers.numwant.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             trackers.numwant = ‹hash› ≫ value ‹numwant›
             trackers.numwant.set = ‹hash›, value ‹numwant› ≫ 0
@@ -132,7 +132,7 @@ TODO (Groups)
     trackers.use_udp
     trackers.use_udp.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             trackers.use_udp = bool (0 or 1)
             trackers.use_udp.set = bool (0 or 1) ≫ 0
@@ -178,7 +178,7 @@ TODO (Groups)
 
         .. rubric:: Configuration Example
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             trackers.alias.set_key = bttracker.debian.org, Debian
 
@@ -242,7 +242,7 @@ Avoiding the *deprecated* commands is a must, these will disappear at some time.
     method.use_deprecated
     method.use_deprecated.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.use_deprecated ≫ bool (0 or 1)
             method.use_deprecated.set = ‹0 or 1› ≫ bool ‹current› (0 or 1)
@@ -254,7 +254,7 @@ Avoiding the *deprecated* commands is a must, these will disappear at some time.
     method.use_intermediate
     method.use_intermediate.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.use_intermediate ≫ value (0 … 2)
             method.use_intermediate.set = ‹0 … 2› ≫ value ‹current› (0 … 2)

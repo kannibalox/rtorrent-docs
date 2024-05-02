@@ -7,7 +7,7 @@
 
     method.insert
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert = ‹name›, ‹type›[|‹sub-type›…][, ‹definition›] ≫ 0
 
@@ -22,7 +22,7 @@
 
     method.insert.simple
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert.simple = ‹name›, ‹definition› ≫ 0
 
@@ -31,7 +31,7 @@
 
     method.insert.c_simple
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert.c_simple = ‹name›, ‹definition› ≫ 0
 
@@ -40,7 +40,7 @@
 
     method.insert.s_c_simple
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert.s_c_simple = ‹name›, ‹definition› ≫ 0
 
@@ -52,7 +52,7 @@
     argument.2
     argument.3
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Internal, not callable from XMLRPC!
             $argument.‹N›= ≫ value of Nth argument
@@ -68,7 +68,7 @@
 
         .. versionadded:: 0.9.8 ``.bool``, ``.string``, and ``.list``
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert.value = ‹name›, value ‹default› ≫ 0
             method.insert.bool = ‹name›, bool ‹default› ≫ 0
@@ -82,7 +82,7 @@
         and also how to split a complicated command into steps using the ``multi`` method type.
 
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Enable verbose mode by setting this to 1
             method.insert.value = sample.verbose, 0
@@ -101,7 +101,7 @@
     method.const
     method.const.enable
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.const = ‹name› ≫ bool (0 or 1)
             method.const.enable = ‹name› ≫ 0
@@ -121,7 +121,7 @@
 
     method.get
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.get = ‹name› ≫ various (see text)
 
@@ -174,7 +174,7 @@
     method.has_key
     method.list_keys
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.set_key = ‹name›, ‹key›[, ‹definition›] ≫ 0
             method.has_key = ‹name›, ‹key› ≫ bool (0 or 1)
@@ -195,7 +195,7 @@
     method.rlookup
     method.rlookup.clear
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.rlookup = ‹key› ≫ list of strings
             method.rlookup.clear = ‹key› ≫ 0
@@ -220,7 +220,7 @@
 
     method.redirect
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.redirect = ‹alias›, ‹target› ≫ 0
 
@@ -308,7 +308,7 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
 
         *New in rTorrent-PS version 1.1*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             event.view.hide = ‹new-view-name› ≫ 0
             event.view.show = ‹old-view-name› ≫ 0
@@ -321,7 +321,7 @@ often starting with a digit, ``!``, or ``~``, for ordering reasons.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.set_key = event.view.hide, ~log,\
                 ((print, "× ", ((ui.current_view)), " → ", ((argument.0))))'
@@ -340,7 +340,7 @@ just like a cron job, but with a resolution of seconds.
 
     schedule2
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             schedule2 = ‹name›, ‹start›, ‹interval›, ((‹command›[, ‹args›…])) ≫ 0
             schedule2 = ‹name›, ‹start›, ‹interval›, "‹command›=[‹args›…][ ; ‹command›=…]" ≫ 0
@@ -358,7 +358,7 @@ just like a cron job, but with a resolution of seconds.
 
         Examples:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Watch directories
             schedule2 = watch_start, 11, 10, ((load.start, (cat, (cfg.watch), "start/*.torrent")))
@@ -376,7 +376,7 @@ just like a cron job, but with a resolution of seconds.
 
     schedule_remove2
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             schedule_remove2 = ‹name› ≫ 0
 
@@ -398,7 +398,7 @@ just like a cron job, but with a resolution of seconds.
 
         *New in rTorrent-PS version 1.2.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             close_low_diskspace = ‹limit› ≫ 0
             close_low_diskspace.normal = ‹limit› ≫ 0
@@ -412,7 +412,7 @@ just like a cron job, but with a resolution of seconds.
 
         By default, it is scheduled to run every 60 seconds and check for 500 MiB:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             schedule2 = low_diskspace,5,60,((close_low_diskspace,500M))
 
@@ -454,7 +454,7 @@ Importing Script Files
     import
     try_import
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             import = ‹rc-file-path› ≫ 0
             try_import = ‹rc-file-path› ≫ 0
@@ -475,7 +475,7 @@ Importing Script Files
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             import = (cat, (cfg.basedir), "_rtlocal.rc")
 
@@ -484,7 +484,7 @@ Importing Script Files
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             import.return= ≫ throw('import.return')
 
@@ -500,7 +500,7 @@ Importing Script Files
         above some code you work on, at the very end of the file.
         Remove the ``#`` to test that code, put it back to ignore your experiment.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             #import.return=
             «here be dragons»
@@ -510,13 +510,13 @@ Importing Script Files
 
         First, protect the import like this (to make it compatible with older builds):
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             branch=(system.has, "import.return="), ((import, using-math-stuff.rc))
 
         Then in the ``using-math-stuff.rc`` file, you can return when certain capabilities are missing.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             branch=(not, (system.has, "math.add=")), ((import.return))
 
@@ -534,7 +534,7 @@ Conditions (if/branch/do)
     branch
     if
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             branch = ‹condition-cmd›, ‹then-cmds›[, ‹else-cmds›] ≫ 0
             if = ‹condition›, ‹then-cmds›[, ‹else-cmds›] ≫ 0
@@ -562,7 +562,7 @@ Conditions (if/branch/do)
         *both* ``then`` and ``else`` are already evaluated when the ``branch/if`` itself is,
         which defeats the whole purpose of the conditional.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Toggle a value between 0 and 1
             method.insert.value = foobar, 0
@@ -585,7 +585,7 @@ Conditions (if/branch/do)
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             do = ‹cmd1›, [, ‹cmd2›…] ≫ 0
 
@@ -600,7 +600,7 @@ Conditions (if/branch/do)
 
         Examples:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             branch = (system.has, "do="), \
                 ((do, \
@@ -637,7 +637,7 @@ Conditional Operators
     equal
     greater
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             less = ‹cmd1›[, ‹cmd2›] ≫ bool (0 or 1)
             equal = ‹cmd1›[, ‹cmd2›] ≫ bool (0 or 1)
@@ -652,7 +652,7 @@ Conditional Operators
         Consider this example, where items are sorted by comparing the names of target pairs,
         and the ``less`` command is called by a typical sorting algorithm:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.sort_new     = name,((less,((d.name))))
             view.sort_current = name,((less,((d.name))))
@@ -660,7 +660,7 @@ Conditional Operators
         An example for a filter with two commands returning integer values is
         the ``important`` view, showing only items with a high priority:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.add = important
             ui.current_view.set = important
@@ -675,7 +675,7 @@ Conditional Operators
 
         For strings, you can use :term:`cat` as the command, and pass it the text literal.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.filter = important, ((not, ((equal, ((d.throttle_name)), ((cat)) )) ))
             view.filter = important, ((equal, ((d.throttle_name)), ((cat, NULL)) ))
@@ -690,7 +690,7 @@ Conditional Operators
 
         .. versionadded:: 0.9.8
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             match = list {‹cmd›, ‹regexp›} ≫ bool (0 or 1)
 
@@ -713,7 +713,7 @@ Conditional Operators
     elapsed.greater
     elapsed.less
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             elapsed.greater = ‹start-time›, ‹interval› ≫ bool (0 or 1)
             elapsed.less = ‹start-time›, ‹interval› ≫ bool (0 or 1)
@@ -724,7 +724,7 @@ Conditional Operators
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert.value = cfg.seed_seconds, 259200
             schedule2 = limit_seed_time, 66, 300, "d.multicall.filtered = started,\
@@ -741,7 +741,7 @@ Conditional Operators
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             compare = ‹order›, ‹sort_key›=[, ...] ≫ bool (0 or 1)
 
@@ -760,7 +760,7 @@ Conditional Operators
 
         Example: Sort a view by message *and* name:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             view.add = messages
             view.filter = messages, ((d.message))
@@ -774,7 +774,7 @@ String Functions
 
     cat
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             cat=«text»[,…] ≫ string
             cat={"array", "of", "text"}[,…] ≫ string
@@ -790,7 +790,7 @@ String Functions
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             print=(cat, text\ or\ , {"array", " of", " text"})
 
@@ -800,7 +800,7 @@ String Functions
     string.len
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.len = «text» ≫ value (length)
 
@@ -820,7 +820,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.equals = «text», «other»[, …] ≫ bool (0 or 1)
             string.startswith = «text», «prefix»[, …] ≫ bool (0 or 1)
@@ -833,7 +833,7 @@ String Functions
 
         Examples:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Show ETA column only on 'active' and 'leeching' views
             method.set_key = event.view.show, ~eta_toggle, \
@@ -851,7 +851,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.contains[_i] = «haystack», «needle»[, …] ≫ bool (0 or 1)
 
@@ -870,7 +870,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.substr = «text»[, «pos»[, «count»[, «default»]]] ≫ string
 
@@ -895,7 +895,7 @@ String Functions
 
         *New in version rTorrent-PS 1.2 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.shorten = «text»[, «maxlen»[, «tail»]] ≫ string
 
@@ -917,7 +917,7 @@ String Functions
     string.join
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.join = «delim»[, «object»[, …]] ≫ string
 
@@ -935,7 +935,7 @@ String Functions
     string.split
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.split = «text», «delim» ≫ array of string (parts)
 
@@ -956,7 +956,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.lpad = «text», «padlen»[, «padding»] ≫ string
             string.rpad = «text», «padlen»[, «padding»] ≫ string
@@ -983,7 +983,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.strip = «text»[, «strippable»[, …]] ≫ string
             string.lstrip = «text»[, «head»[, …]] ≫ string
@@ -1010,7 +1010,7 @@ String Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             string.map = «text», {«old»,«new»}[, …] ≫ string
             string.replace = «text», {«old»,«new»}[, …] ≫ string
@@ -1043,7 +1043,7 @@ Array Functions
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             array.at = «array», «pos» ≫ object (element)
 
@@ -1174,7 +1174,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
     to_mb
     to_xb
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             convert.kb = ‹value› ≫ string
             convert.mb = ‹value› ≫ string
@@ -1206,7 +1206,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             convert.time_delta = ‹timestamp›[, ‹timebase›] ≫ string
 
@@ -1229,7 +1229,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             convert.human_size = ‹bytes›[, ‹format›] ≫ string
 
@@ -1263,7 +1263,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
 
         *New in version rTorrent-PS 1.1 only.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             convert.magnitude = ‹number› ≫ string
 
@@ -1304,7 +1304,7 @@ The ``to_*`` forms are **deprecated** and are only provided for reference.
 
         *New in rTorrent PS version 1.1.*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             value = ‹number›[, ‹base›] ≫ value
 

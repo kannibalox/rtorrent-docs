@@ -253,6 +253,37 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {
-    "http://docs.python.org/": None,
-}
+intersphinx_mapping = {}
+
+# Simple custom lexer for rtorrent RC language
+from pygments.lexer import RegexLexer
+from pygments import token
+from sphinx.highlighting import lexers
+
+class CustomLexer(RegexLexer):
+    name = 'rtorrentrc'
+    aliases = ['rtorrentrc']
+    filenames = ['*.rc']
+
+    tokens = {
+        'root': [
+            (r'^#.*', token.Comment),
+            (r'^[^=≫]+', token.Name.Function),
+            (r'≫', token.Operator), # Highlight the '≫' operator
+            (r'".*?"', token.String),
+            (r'‹.+?›', token.Name.Variable),  # Highlight strings enclosed in '‹›' as variables
+            (r'string|integer|value|list|dictionary|value|bool|target|bytes', token.Keyword.Type),
+            (r'0$', token.Number),
+            (r'[^\s‹≫]+', token.Text), # Highlight any other text as plain text
+            (r'\\$', token.Keyword.Type),
+            (r' +', token.Whitespace),
+        ],
+        'multiline': [
+            (r'verbose', token.Keyword.Type),
+            (r'".*?"', token.String),
+            (r'.+', token.Whitespace),
+            (r'[^\\]$', token.Whitespace, '#pop')
+        ]
+    }
+
+lexers['rtorrentrc'] = CustomLexer(startinline=True)

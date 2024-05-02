@@ -9,7 +9,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     dht.add_node
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             dht.add_node = string ‹[host]:[port]› ≫ 0
 
@@ -18,7 +18,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     dht.mode.set
     dht
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             dht.mode.set = string ‹mode› ≫ 0
             dht = string ‹mode› ≫ 0
@@ -38,7 +38,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     dht.port.set
     dht_port
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             dht.port ≫ value ‹port›
             dht.mode.set = value ‹port› ≫ 0
@@ -71,7 +71,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.hash.on_completion
     pieces.hash.on_completion.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.hash.on_completion ≫ bool (0 or 1)
             pieces.hash.on_completion.set = bool (0 or 1) ≫ 0
@@ -87,7 +87,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.memory.block_count
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.memory.block_count ≫ value ‹blocks›
 
@@ -95,7 +95,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.memory.current
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.memory.current ≫ value ‹bytes›
 
@@ -105,7 +105,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.memory.max
     pieces.memory.max.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.memory.max ≫ value ‹bytes›
             pieces.memory.max.set = value ‹bytes› ≫ 0
@@ -115,7 +115,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.memory.sync_queue
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.memory.sync_queue ≫ value ‹bytes›
 
@@ -126,7 +126,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.preload.min_size
     pieces.preload.min_size.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.preload.min_rate ≫ value ‹bytes›
             pieces.preload.min_rate.set = ‹bytes› ≫ 0
@@ -140,7 +140,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.preload.type
     pieces.preload.type.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
              pieces.preload.type ≫ value ‹enum›
              pieces.preload.type.set = value ‹enum› ≫ 0
@@ -172,7 +172,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.stats_not_preloaded
     pieces.stats_preloaded
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
              pieces.stats_not_preloaded ≫ value ‹num›
              pieces.stats_preloaded ≫ value ‹num›
@@ -183,7 +183,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.stats.total_size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.stats.total_size ≫ value ‹bytes›
 
@@ -194,7 +194,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.sync.always_safe
     pieces.sync.always_safe.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.sync.always_safe ≫ bool (0 or 1)
             pieces.sync.always_safe.set = bool (0 or 1) ≫ 0
@@ -204,7 +204,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.sync.queue_size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.sync.queue_size ≫ value ‹chunks›
 
@@ -213,7 +213,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
     pieces.sync.safe_free_diskspace
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.sync.safe_free_diskspace ≫ value ‹bytes›
 
@@ -224,7 +224,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.sync.timeout
     pieces.sync.timeout.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.sync.timeout ≫ value ‹seconds›
             pieces.sync.timeout.set = value ‹seconds› ≫ 0
@@ -235,7 +235,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     pieces.sync.timeout_safe
     pieces.sync.timeout_safe.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             pieces.sync.timeout_safe ≫ value ‹seconds›
             pieces.sync.timeout_safe.set = value ‹seconds› ≫ 0
@@ -273,7 +273,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     encryption
     protocol.encryption.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             protocol.encryption.set = string ‹flags› ≫ 0
 
@@ -303,7 +303,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     protocol.pex
     protocol.pex.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             protocol.pex ≫ bool (0 or 1)
             protocol.pex.set = bool (0 or 1) ≫ 0
@@ -346,7 +346,7 @@ and the amount of peers requested in tracker announces.
     throttle.down
     throttle.up
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.down = ‹name›, ‹rate› ≫ 0
             throttle.up = ‹name›, ‹rate› ≫ 0
@@ -360,7 +360,7 @@ and the amount of peers requested in tracker announces.
     throttle.down.max
     throttle.up.max
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.down.max = ‹name› ≫ value ‹limit›
             throttle.up.max = ‹name› ≫ value ‹limit›
@@ -373,7 +373,7 @@ and the amount of peers requested in tracker announces.
     throttle.down.rate
     throttle.up.rate
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.down.rate = ‹name› ≫ value ‹rate›
             throttle.up.rate = ‹name› ≫ value ‹rate›
@@ -397,7 +397,7 @@ and the amount of peers requested in tracker announces.
     throttle.global_down.rate
     throttle.global_up.rate
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.global_down.rate ≫ value ‹rate›
             throttle.global_up.rate ≫ value ‹rate›
@@ -407,7 +407,7 @@ and the amount of peers requested in tracker announces.
     throttle.global_down.total
     throttle.global_up.total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.global_down.total ≫ value ‹bytes›
             throttle.global_up.total ≫ value ‹bytes›
@@ -484,7 +484,7 @@ and the amount of peers requested in tracker announces.
 
     throttle.ip
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             throttle.ip = ‹throttle name›, ‹IP or domain name› ≫ 0
 
@@ -492,7 +492,7 @@ and the amount of peers requested in tracker announces.
 
     throttle.names
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # rTorrent-PS 1.1+ only
             throttle.names= ≫ array ‹names›

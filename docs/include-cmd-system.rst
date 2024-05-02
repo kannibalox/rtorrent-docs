@@ -22,7 +22,7 @@ Call operating system commands, possibly catching their output for use within *r
     execute.throw.bg
     execute2
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             execute.throw[.bg] = {command, arg1, arg2, ...} ≫ 0
 
@@ -37,7 +37,7 @@ Call operating system commands, possibly catching their output for use within *r
         features, call ``bash -c "‹command›"`` like shown in this
         example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Write a PID file into the session directory
             execute.throw = sh, -c, (cat, "echo >", (session.path), "rtorrent.pid", " ", (system.pid))
@@ -48,7 +48,7 @@ Call operating system commands, possibly catching their output for use within *r
     execute.nothrow
     execute.nothrow.bg
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             execute.nothrow[.bg] = {command, arg1, arg2, ...} ≫ value ‹exit status›
 
@@ -63,7 +63,7 @@ Call operating system commands, possibly catching their output for use within *r
     execute.capture
     execute.capture_nothrow
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             execute.capture[_nothrow] = {command, arg1, arg2, ...} ≫ string ‹stdout›
 
@@ -74,7 +74,7 @@ Call operating system commands, possibly catching their output for use within *r
         Note that any line-endings are included, so if you need a plain string value,
         wrap the command you want to call into an ``echo -n`` command:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             method.insert = log_stamp, private|simple,\
                 "execute.capture_nothrow = bash, -c, \"echo -n $(date +%Y-%m-%d-%H%M%S)\""
@@ -104,7 +104,7 @@ Commands related to the operating system and the XMLRPC API.
     system.methodSignature
     system.getCapabilities
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.listMethods ≫ array ‹methods›
             system.methodExist = string ‹method› ≫ bool (0 or 1)
@@ -118,7 +118,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.capabilities
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.capabilities ≫ array ‹capabilities›
 
@@ -196,7 +196,7 @@ Commands related to the operating system and the XMLRPC API.
     system.client_version
     system.library_version
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.api_version ≫ string ‹version›
             system.client_version ≫ string ‹version›
@@ -213,7 +213,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *New in rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.client_version.as_value ≫ value ‹Mmmpp version decimal›
 
@@ -237,7 +237,7 @@ Commands related to the operating system and the XMLRPC API.
     system.colors.max
     system.colors.rgb
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # rTorrent-PS only
             system.colors.enabled ≫ bool (0 or 1)
@@ -249,7 +249,7 @@ Commands related to the operating system and the XMLRPC API.
     system.cwd
     system.cwd.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.cwd ≫ string ‹path›
             system.cwd.set = string ‹path› ≫ 0
@@ -263,7 +263,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *New in rTorrent-PS 0.X*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.env = ‹varname› ≫ string ‹env-value›
 
@@ -272,7 +272,7 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.path.set = (cat, (system.env, RTORRENT_HOME), "/.session")
 
@@ -280,7 +280,7 @@ Commands related to the operating system and the XMLRPC API.
     system.file.allocate
     system.file.allocate.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.file.allocate ≫ bool (0 or 1)
             system.file.allocate.set = bool (0 or 1) ≫ 0
@@ -307,7 +307,7 @@ Commands related to the operating system and the XMLRPC API.
     system.file_status_cache.prune
     system.file_status_cache.size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.file_status_cache.size ≫ value ‹size›
             system.file_status_cache.prune ≫ 0
@@ -319,7 +319,7 @@ Commands related to the operating system and the XMLRPC API.
     system.files.failed_counter
     system.files.opened_counter
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.files.closed_counter ≫ value ‹closed›
             system.files.failed_counter ≫ value ‹failed›
@@ -333,7 +333,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *New in rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.has = ‹capability› ≫ bool (0 or 1)
             system.has.list = ≫ list of string (capabilities)
@@ -364,14 +364,14 @@ Commands related to the operating system and the XMLRPC API.
         To make sure the ``system.has`` command can be actually used,
         add this somewhere *early* in your configuration:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # `system.has` polyfill (the "false=" silences the `catch` command, in rTorrent-PS)
             catch = {"false=", "method.redirect=system.has,false"}
 
         The following branch somehow self-absorbedly shows how this can be used:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             branch=(system.has, system.has), ((print, "Your build can haz system.has!"))
 
@@ -379,7 +379,7 @@ Commands related to the operating system and the XMLRPC API.
 
         A very practical use-case is auto-detection of *rTorrent-PS 1.1+*:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # `system.has` polyfill (the "false=" silences the `catch` command, in rTorrent-PS)
             catch = {"false=", "method.redirect=system.has,false"}
@@ -391,7 +391,7 @@ Commands related to the operating system and the XMLRPC API.
         using new features are safe and don't blow up in older builds.
         Or conditionally backfill something missing in older builds, like in this example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Define default columns for older rTorrent-PS builds
             branch=(not, (system.has, canvas_v2)), ((import, rtorrent.d/05-rt-ps-columns.rc.include))
@@ -402,7 +402,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *New in rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.has.private_methods = ≫ list of string (method names)
             system.has.public_methods = ≫ list of string (method names)
@@ -441,7 +441,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.hostname
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.hostname ≫ string ‹hostname›
 
@@ -449,7 +449,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.pid
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.pid ≫ value ‹pid›
 
@@ -459,7 +459,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *New in rTorrent-PS 1.0+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.random = [[‹lower›,] ‹upper›] ≫ value
 
@@ -478,7 +478,7 @@ Commands related to the operating system and the XMLRPC API.
     system.time_seconds
     system.time_usec
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.time ≫ value ‹time›
             system.time_seconds ≫ value ‹time›
@@ -492,7 +492,7 @@ Commands related to the operating system and the XMLRPC API.
 
     system.umask.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             system.umask.set ≫ value ‹time›
 
@@ -515,7 +515,7 @@ Commands related to the operating system and the XMLRPC API.
 
     log.add_output
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.add_output = ‹scope›, ‹name› ≫ 0
 
@@ -531,7 +531,7 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.add_output = tracker_debug, tracelog
 
@@ -540,7 +540,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. versionadded:: 0.9.8
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.close = string ‹name› ≫ 0
 
@@ -550,7 +550,7 @@ Commands related to the operating system and the XMLRPC API.
 
     log.execute
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.execute = ‹path› ≫ 0
 
@@ -563,14 +563,14 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.execute = (cat, (cfg.logs), "execute.log")
 
 
     log.xmlrpc
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.xmlrpc = ‹path› ≫ 0
 
@@ -582,7 +582,7 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.xmlrpc = (cat, (cfg.logs), "xmlrpc.log")
 
@@ -591,7 +591,7 @@ Commands related to the operating system and the XMLRPC API.
     log.open_file_pid
     log.open_gz_file_pid
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.open_file = ‹name›, ‹log file path›[, ‹scope›…] ≫ 0
             log.open_gz_file
@@ -616,7 +616,7 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.open_file_pid = tracker, /tmp/tracker.log, tracker_debug
             # … opens '/tmp/tracker.log.NNNNN' for debugging tracker announces etc.
@@ -627,7 +627,7 @@ Commands related to the operating system and the XMLRPC API.
 
     log.vmmap.dump
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.vmmap.dump = ‹dump file path› ≫ 0
 
@@ -639,7 +639,7 @@ Commands related to the operating system and the XMLRPC API.
 
         *rTorrent-PS 0.x+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.messages = ‹log file path› ≫ 0
 
@@ -650,7 +650,7 @@ Commands related to the operating system and the XMLRPC API.
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             log.messages = (cat, (cfg.logs), "messages.log")
 

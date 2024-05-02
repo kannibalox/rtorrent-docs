@@ -12,9 +12,9 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         ``d.multicall.filtered`` was added in rTorrent 0.9.8/rTorrent-PS 1.1
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
-            d.multicall2 = ‹view›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ list of lists of results ‹rows of results›
+            d.multicall2 = ‹view›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫  list[list] ‹results›
             d.multicall.filtered = ‹view›, ‹predicate›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ same as 'multicall2'
 
         These commands iterate over the content of a given view, or
@@ -52,9 +52,9 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     download_list
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
-            download_list = ‹view› ≫ list of strings ‹info hashes›
+            download_list = ‹view› ≫ list[string] ‹infohashes›
 
         ``download_list`` always returns a list of the contained
         infohashes from the specified view.
@@ -67,7 +67,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.directory_base
     d.directory_base.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.name = ‹hash› ≫ string ‹name›
             d.base_filename = ‹hash› ≫ string ‹basename›
@@ -118,7 +118,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
         The definition below is useful, since it *always* contains a valid path to an item's data,
         and can be used in place of the unreliable ``d.base_path``.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Return path to item data (never empty, unlike `d.base_path`);
             # multi-file items return a path ending with a '/'.
@@ -133,7 +133,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.is_open
     d.is_active
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.state = ‹hash› ≫ bool (0 or 1)
             d.state_changed = ‹hash› ≫ value ‹timestamp›
@@ -199,7 +199,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.accepting_seeders.disable
     d.accepting_seeders.enable
 
-       .. code-block:: ini
+       .. code-block:: rtorrentrc
 
             d.accepting_seeders = ‹hash› ≫ bool (0 or 1)
             d.accepting_seeders.disable = ‹hash› ≫ 0
@@ -211,7 +211,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.bitfield
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.bitfield = ‹hash› ≫ string ‹bitfield›
 
@@ -223,7 +223,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.bytes_done
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.bytes_done = ‹hash› ≫ value ‹bytes›
 
@@ -235,7 +235,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.check_hash
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.check_hash = ‹hash› ≫ 0
 
@@ -245,7 +245,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.chunk_size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.chunk_size = ‹hash› ≫ value ‹size›
 
@@ -254,7 +254,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.chunks_hashed
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.chunks_hashed = ‹hash› ≫ value ‹chunks›
 
@@ -268,7 +268,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.complete
     d.incomplete
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.complete = ‹hash› ≫ bool (0 or 1)
             d.incomplete = ‹hash› ≫ bool (0 or 1)
@@ -279,7 +279,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.completed_bytes
     d.completed_chunks
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.completed_bytes = ‹hash› ≫ value ‹bytes›
             d.completed_chunks = ‹hash› ≫ value ‹chunks›
@@ -298,7 +298,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.create_link
     d.delete_link
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.create_link = ‹type›, ‹path›, ‹suffix› ≫ 0
             d.delete_link = ‹type›, ‹path›, ‹suffix› ≫ 0
@@ -317,7 +317,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.delete_tied
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.delete_tied = ‹hash› ≫ 0
 
@@ -327,7 +327,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: Example
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Delete metafile from a watch dir directly after loading it
             # (note that a copy still remains in the session directory)
@@ -337,7 +337,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.creation_date
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.creation_date = ‹hash› ≫ value ‹timestamp›
 
@@ -361,7 +361,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.custom2…5
     d.custom2…5.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom[_throw] = ‹hash›, string ‹key› ≫ string ‹value›
             d.custom.set = ‹hash›, string ‹key›, string ‹value› ≫ 0
@@ -390,7 +390,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.if_z = ‹hash›, string ‹key›, string ‹default› ≫ string ‹value›
 
@@ -409,7 +409,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.set_if_z = ‹hash›, string ‹key›, string ‹value› ≫ 0
 
@@ -428,7 +428,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.erase = ‹hash›, string ‹key›[, …] ≫ 0
 
@@ -446,7 +446,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.toggle = ‹hash›, string ‹key› ≫ value ‹negated›
 
@@ -467,7 +467,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.as_value = ‹hash›, string ‹key› ≫ value ‹number›
 
@@ -489,7 +489,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.keys = ‹hash› ≫ list of string ‹defined keys›
 
@@ -507,7 +507,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.custom.items = ‹hash› ≫ map of key / value strings ‹defined items›
 
@@ -527,7 +527,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.disconnect.seeders
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.disconnect.seeders = ‹hash› ≫ 0
 
@@ -545,10 +545,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.down.rate
     d.down.total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
-            d.down.rate = ‹hash› ≫ value ‹rate [bytes/s]›
-            d.down.total = ‹hash› ≫ value ‹total [bytes]›
+            d.down.rate = ‹hash› ≫ value ‹rate (bytes/s)›
+            d.down.total = ‹hash› ≫ value ‹total (bytes)›
 
         The total amount and current rate of download traffic for this item.
         It's possible for the total download to be greater than :term:`d.size_bytes`,
@@ -560,7 +560,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.downloads_min
     d.downloads_min.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.downloads_max = ‹hash› ≫ value ‹max›
             d.downloads_max.set = ‹hash›, value ‹max› ≫ 0
@@ -579,7 +579,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.erase
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.erase = ‹hash› ≫ 0
 
@@ -594,7 +594,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.free_diskspace
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.free_diskspace = ‹hash› ≫ value ‹bytes›
 
@@ -613,7 +613,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.hash
 
-       .. code-block:: ini
+       .. code-block:: rtorrentrc
 
             d.hash = ‹hash› ≫ string ‹hash›
 
@@ -628,7 +628,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.hashing
 
-       .. code-block:: ini
+       .. code-block:: rtorrentrc
 
             d.hashing = ‹hash› ≫ value ‹hash_status›
 
@@ -645,7 +645,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.hashing_failed
     d.hashing_failed.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.hashing_failed = ‹hash› ≫ bool (0 or 1)
             d.hashing_failed.set = ‹hash›, bool (0 or 1) ≫ 0
@@ -656,7 +656,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.ignore_commands
     d.ignore_commands.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.ignore_commands = ‹hash› ≫ bool (0 or 1)
             d.ignore_commands.set = ‹hash›, bool (0 or 1) ≫ 0
@@ -670,7 +670,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.is_hash_checked
     d.is_hash_checking
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.is_hash_checked = ‹hash› ≫ bool (0 or 1)
             d.is_hash_checking = ‹hash› ≫ bool (0 or 1)
@@ -684,7 +684,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *since rTorrent-PS 1.1 / rTorrent 0.9.7*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.is_meta = ‹hash› ≫ bool (0 or 1)
 
@@ -694,7 +694,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.is_multi_file
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.is_multi_file = ‹hash› ≫ bool (0 or 1)
 
@@ -711,7 +711,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.is_pex_active
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.is_pex_active = ‹hash› ≫ bool (0 or 1)
 
@@ -721,7 +721,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.is_private
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.is_private = ‹hash› ≫ bool (0 or 1)
 
@@ -731,7 +731,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.left_bytes
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.left_bytes = ‹hash› ≫ value ‹bytes›
 
@@ -741,7 +741,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.load_date
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.load_date = ‹hash› ≫ value ‹time›
 
@@ -753,7 +753,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.local_id
     d.local_id_html
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.local_id = ‹hash› ≫ string ‹ID›
             d.local_id_html = ‹hash› ≫ string ‹ID›
@@ -766,7 +766,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.max_file_size
     d.max_file_size.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.max_file_size = ‹hash› ≫ value ‹bytes›
             d.max_file_size.set = ‹hash›, value ‹bytes› ≫ 0
@@ -787,7 +787,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *d.message.alert is rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.message = ‹hash› ≫ string ‹message›
             d.message.set = ‹hash›, string ‹message› ≫ 0
@@ -820,7 +820,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.peer_exchange
     d.peer_exchange.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.peer_exchange = ‹hash› ≫ bool (0 or 1)
             d.peer_exchange.set = ‹hash›, bool (0 or 1) ≫ 0
@@ -840,7 +840,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.peers_min
     d.peers_min.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.peer_max = ‹hash› ≫ value
             d.peer_max.set = ‹hash›, value ‹max› ≫ 0
@@ -865,7 +865,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.priority.set
     d.priority_str
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.priority = ‹hash› ≫ value ‹prio›
             d.priority.set = ‹hash›, value ‹prio› ≫ 0
@@ -908,7 +908,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.size_files
     d.size_pex
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.size_bytes = ‹hash› ≫ value ‹bytes›
             d.size_chunks = ‹hash› ≫ value ‹chunks›
@@ -926,7 +926,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.skip.rate
     d.skip.total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.skip.rate = ‹hash› ≫ value ‹rate›
             d.skip.total = ‹hash› ≫ value ‹total›
@@ -943,7 +943,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.timestamp.finished
     d.timestamp.started
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.timestamp.finished = ‹hash› ≫ value ‹epoch›
             d.timestamp.started = ‹hash› ≫ value ‹epoch›
@@ -975,7 +975,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.tracker.insert
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker.insert = ‹hash›, value ‹group›, string ‹url› ≫ 0
 
@@ -985,7 +985,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.tracker.send_scrape
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker.send_scrape = ‹hash›, value ‹delay› ≫ 0
 
@@ -998,7 +998,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. versionadded:: 0.9.8 ``d.tracker_announce.force``
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker_announce = ‹hash› ≫ 0
 
@@ -1008,7 +1008,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.tracker_focus
     d.tracker_size
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker_focus = ‹hash› ≫ value ‹num›
             d.tracker_size = ‹hash› ≫ value ‹num›
@@ -1019,7 +1019,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.tracker_numwant
     d.tracker_numwant.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker_numwant = ‹hash› ≫ value ‹numwant›
             d.tracker_numwant.set = ‹hash›, value ‹numwant› ≫ 0
@@ -1045,7 +1045,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.up.rate
     d.up.total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.up.rate = ‹hash› ≫ value ‹rate [bytes/s]›
             d.up.total = ‹hash› ≫ value ‹total [bytes]›
@@ -1055,7 +1055,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.update_priorities
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.update_priorities = ‹hash› ≫ 0
 
@@ -1069,7 +1069,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
     d.uploads_min
     d.uploads_min.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.uploads_max = ‹hash› ≫ value ‹max›
             d.uploads_max.set = ‹hash›, value ‹max› ≫ 0
@@ -1093,7 +1093,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
     d.wanted_chunks
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.wanted_chunks = ‹hash› ≫ value ‹chunks›
 
@@ -1125,7 +1125,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: Examples
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Trackers view (all items, sorted by tracker domain and then name).
             # This will ONLY work if you use rTorrent-PS!
@@ -1148,7 +1148,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. rubric:: *rTorrent-PS 1.1+ only*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             d.tracker_scrape.downloaded = ‹target› ≫ value ‹amount›
             d.tracker_scrape.complete = ‹target› ≫ value ‹amount›
@@ -1172,7 +1172,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These commands can be used as arguments in a :term:`f.multicall`.
-They can also be called directly, but you need to pass `‹infohash›:f‹index›` as the first argument.
+They can also be called directly, but you need to pass ``‹infohash›:f‹index›`` as the first argument.
 Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
 .. rubric:: Example
@@ -1190,9 +1190,9 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.multicall
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
-            f.multicall = ‹infohash›, ‹pattern›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ list of lists of results ‹rows of results›
+            f.multicall = ‹infohash›, string ‹pattern›, [string ‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ list[list] ‹results›
 
         Iterates over the files in an item, calling the given ``f.*`` commands.
         The second argument, if non-empty, is a glob-like pattern (e.g. ``*.mkv``) and
@@ -1203,7 +1203,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.completed_chunks
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.completed_chunks = ‹infohash› ≫ value ‹chunks›
 
@@ -1212,7 +1212,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.frozen_path
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.frozen_path = ‹infohash› ≫ string ‹abspath›
 
@@ -1234,7 +1234,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.last_touched
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.last_touched = ‹infohash› ≫ value ‹microseconds›
 
@@ -1249,7 +1249,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.offset
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.offset = ‹infohash› ≫ value ‹bytes›
 
@@ -1258,14 +1258,14 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.path
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.path = ‹infohash› ≫ string ‹path›
 
         The path of the file relative to the base directory.
 
     f.path_components
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.path_components = ‹infohash› ≫ array ‹components›
 
@@ -1273,7 +1273,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
 
     f.path_depth
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.path_depth = ‹infohash› ≫ value ‹depth›
 
@@ -1288,7 +1288,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
     f.prioritize_last.disable
     f.prioritize_last.enable
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.prioritize_first = ‹infohash› ≫ bool (0 or 1)
             f.prioritize_first.disable = ‹infohash› ≫ 0
@@ -1311,7 +1311,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
     f.priority
     f.priority.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.priority = ‹infohash› ≫ value ‹priority›
             f.priority.set = ‹infohash›, value ‹priority› ≫ 0
@@ -1330,7 +1330,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
     f.range_first
     f.range_second
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.range_first = ‹infohash› ≫ value ‹bytes›
             f.range_second = ‹infohash› ≫ value ‹chunks›
@@ -1342,7 +1342,7 @@ Index counting starts at ``0``, the array size is :term:`d.size_files`.
     f.size_bytes
     f.size_chunks
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             f.size_bytes = ‹infohash› ≫ value ‹bytes›
             f.size_chunks = ‹infohash› ≫ value ‹chunks›
@@ -1378,7 +1378,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.multicall
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.multicall = ‹infohash›, "", [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ list of lists of results ‹rows of results›
 
@@ -1389,7 +1389,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.address
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.address = ‹target› ≫ string ‹address›
 
@@ -1398,7 +1398,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.banned
     p.banned.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.banned = ‹target› ≫ bool (0 or 1)
             p.banned.set = ‹target›, bool (0 or 1) ≫ 0
@@ -1414,7 +1414,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.call_target
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.call_target = ‹infohash›, ‹peerhash›, ‹cmd›, [‹arg1›, [, ‹arg2›…]] ≫ bool (0 or 1)
 
@@ -1422,7 +1422,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.client_version
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.client_version = ‹target› ≫ string ‹client version›
 
@@ -1432,7 +1432,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.completed_percent
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.completed_percent = ‹target› ≫ value ‹percent›
 
@@ -1441,7 +1441,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.disconnect
     p.disconnect_delayed
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            p.disconnect = ‹target› ≫ 0
            p.disconnect_delayed = ‹target› ≫ 0
@@ -1454,7 +1454,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.down_rate
     p.down_total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.down_rate = ‹target› ≫ value ‹rate  [bytes/s]›
             p.down_total = ‹target› ≫ value ‹total  [bytes]›
@@ -1463,7 +1463,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.id
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
              p.id = ‹target› ≫ string ‹peerhash›
 
@@ -1472,7 +1472,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.id_html
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.id_html = ‹target› ≫ string ‹client id›
 
@@ -1483,7 +1483,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.is_encrypted
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.is_encrypted = ‹target› ≫ bool (0 or 1)
 
@@ -1492,7 +1492,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.is_incoming
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.is_incoming = ‹target› ≫ bool (0 or 1)
 
@@ -1500,7 +1500,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.is_obfuscated
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.is_obfuscated = ‹target› ≫ bool (0 or 1)
 
@@ -1510,7 +1510,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.is_preferred
     p.is_unwanted
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.is_preferred = ‹target› ≫ bool (0 or 1)
             p.is_unwanted = ‹target› ≫ bool (0 or 1)
@@ -1520,7 +1520,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.options_str
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.options_str = ‹target› ≫ string ‹options›
 
@@ -1531,7 +1531,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.peer_rate
     p.peer_total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.peer_rate = ‹target› ≫ value ‹rate [bytes/s]›
             p.peer_total = ‹target› ≫ value ‹total [bytes]›
@@ -1542,7 +1542,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
 
     p.port
 
-         .. code-block:: ini
+         .. code-block:: rtorrentrc
 
              p.port = ‹target› ≫ value ‹port›
 
@@ -1552,7 +1552,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.snubbed
     p.snubbed.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.snubbed = ‹target› ≫ bool (0 or 1)
             p.is_snubbed = ‹target› ≫ bool (0 or 1)
@@ -1564,7 +1564,7 @@ They can also be called directly, but you need to pass `‹infohash›:p‹peerh
     p.up_rate
     p.up_total
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             p.up_rate = ‹target› ≫ value ‹rate [bytes/s]›
             p.up_total = ‹target› ≫ value ‹total [bytes]›
@@ -1599,7 +1599,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.multicall
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.multicall = ‹infohash›, "", [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ list of lists of results ‹rows of results›
 
@@ -1611,7 +1611,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.activity_time_last
     t.activity_time_next
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.activity_time_last = ‹target› ≫ value ‹epoch time in seconds›
             t.activity_time_next = ‹target› ≫ value ‹epoch time in seconds›
@@ -1630,7 +1630,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.can_scrape
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.can_scrape = ‹target› ≫ bool (0 or 1)
 
@@ -1646,7 +1646,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.disable
     t.enable
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.is_usable = ‹target› ≫ bool (0 or 1)
             t.is_enabled = ‹target› ≫ bool (0 or 1)
@@ -1660,7 +1660,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.failed_counter
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.failed_counter = ‹target› ≫ value ‹count›
 
@@ -1672,7 +1672,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.failed_time_last
     t.failed_time_next
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.failed_time_last = ‹target› ≫ value ‹seconds›
             t.failed_time_next = ‹target› ≫ value ‹seconds›
@@ -1685,7 +1685,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.group
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.group = ‹target› ≫ value ‹group id›
 
@@ -1695,7 +1695,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.id
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.id = ‹target› ≫ string ‹tracker id›
 
@@ -1706,7 +1706,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.is_busy
     t.is_open
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.is_busy = ‹target› ≫ bool (0 or 1)
             t.is_open = ‹target› ≫ bool (0 or 1)
@@ -1716,7 +1716,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.is_extra_tracker
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.is_extra_tracker = ‹target› ≫ bool (0 or 1)
 
@@ -1725,7 +1725,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.latest_event
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.latest_event = ‹target› ≫ value ‹event id›
 
@@ -1741,7 +1741,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.latest_new_peers
     t.latest_sum_peers
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.latest_sum_peers = ‹target› ≫ value ‹peers›
             t.latest_new_peers = ‹target› ≫ value ‹peers›
@@ -1752,7 +1752,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.min_interval
     t.normal_interval
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.min_interval = ‹target› ≫ value ‹seconds›
             t.normal_interval = ‹target› ≫ value ‹seconds›
@@ -1761,7 +1761,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.scrape_counter
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.scrape_counter = ‹target› ≫ value ‹count›
 
@@ -1772,7 +1772,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.scrape_downloaded
     t.scrape_incomplete
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.scrape_downloaded = ‹target› ≫ value ‹amount›
             t.scrape_complete = ‹target› ≫ value ‹amount›
@@ -1783,7 +1783,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.scrape_time_last
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.scrape_time_last = ‹target› ≫ value ‹seconds›
 
@@ -1792,7 +1792,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.success_counter
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.success_counter = ‹target› ≫ value ‹count›
 
@@ -1801,7 +1801,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
     t.success_time_last
     t.success_time_next
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.success_time_last = ‹target› ≫ value ‹seconds›
             t.success_time_next = ‹target› ≫ value ‹seconds›
@@ -1811,7 +1811,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.type
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.type = ‹target› ≫ value ‹type id›
 
@@ -1823,7 +1823,7 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 
     t.url
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             t.url = ‹target› ≫ string ‹url›
 
@@ -1852,7 +1852,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
     load.start
     load.start_verbose
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # all other commands have the same arguments
             load.normal = ‹metafile pattern›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ 0
@@ -1863,7 +1863,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
         ``normal`` loads them stopped, and ``verbose`` reports problems to the console,
         like when a new file's infohash collides with an already loaded item.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # Simple watches that load items started or closed
             schedule2 = watch_start, 1, 10, ((load.start_verbose, (cat, (cfg.watch), "start/*.torrent")))
@@ -1881,7 +1881,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
         and some commands like :term:`d.start` won't work in that state.
         So you sometimes have to use :term:`event.download.inserted_new` handlers instead.
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             schedule2 = watch_with_category, 27, 10, \
                 ((load.verbose, (cat,(cfg.watch),"foobar/*.torrent"), "d.custom1.set=foobar"))
@@ -1905,10 +1905,10 @@ and using ``Ctrl-K`` also implicitly unties an item.
 
         .. rubric:: *load.raw_start_verbose since rTorrent 0.9.7*
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # all other commands have the same arguments
-            load.raw = ‹binary (i.e. raw) metafile›, [‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ 0
+            load.raw = bytes ‹binary (i.e. raw) metafile›, [string ‹cmd1›=[‹args›][, ‹cmd2›=…]] ≫ 0
 
         Load a metafile passed as *base64* data. The method of encoding the data for XMLRPC
         will vary depending on which tool you're using.
@@ -1943,7 +1943,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
     session.name
     session.name.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.name ≫ string ‹name›
             session.name.set = string ‹name› ≫ 0
@@ -1956,7 +1956,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
     session.on_completion
     session.on_completion.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.on_completion ≫ bool (0 or 1)
             session.on_completion.set = bool (0 or 1) ≫ 0
@@ -1969,7 +1969,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
     session.path
     session.path.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.path ≫ string ‹path›
             session.path.set = string ‹path› ≫ 0
@@ -1991,7 +1991,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
 
     session.save
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.save ≫ 0
 
@@ -2010,7 +2010,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
     session.use_lock
     session.use_lock.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             session.use_lock ≫ bool (0 or 1)
             session.use_lock.set = bool (0 or 1) ≫ 0

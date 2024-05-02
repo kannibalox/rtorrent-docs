@@ -9,7 +9,7 @@
     network.bind_address
     network.bind_address.set
 
-       .. code-block:: ini
+       .. code-block:: rtorrentrc
 
            network.bind_address ≫ ‹address›
            network.bind_address.set = ‹address› ≫ 0
@@ -20,7 +20,7 @@
     network.http.dns_cache_timeout
     network.http.dns_cache_timeout.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.http.dns_cache_timeout ≫ ‹seconds›
            network.http.dns_cache_timeout.set = ‹seconds› ≫ 0
@@ -36,7 +36,7 @@
     network.http.max_open
     network.http.max_open.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.http.current_open ≫ value ‹num›
            network.http.max_open ≫ value ‹max›
@@ -53,7 +53,7 @@
     network.http.proxy_address
     network.http.proxy_address.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.http.proxy_address ≫  <address>
            network.http.proxy_address.set = <address> ≫ 0
@@ -71,7 +71,7 @@
     network.http.capath
     network.http.capath.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             network.http.cacert ≫  <file>
             network.http.cacert.set = <file> ≫ 0
@@ -91,7 +91,7 @@
     network.http.ssl_verify_peer
     network.http.ssl_verify_peer.set
 
-         .. code-block:: ini
+         .. code-block:: rtorrentrc
 
             network.http.ssl_verify_host ≫ <bool> (0 or 1)
             network.http.ssl_verify_host.set = <bool> (0 or 1) ≫ 0
@@ -109,7 +109,7 @@
     network.listen.backlog
     network.listen.backlog.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.listen.backlog ≫ value <max>
            network.listen.backlog.set = value <max> ≫ 0
@@ -120,7 +120,7 @@
 
     network.listen.port
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.listen.port = <port> ≫ 0
 
@@ -132,7 +132,7 @@
     network.local_address
     network.local_address.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.local_address ≫ <address>
            network.local_address.set = <address> ≫ 0
@@ -145,7 +145,7 @@
     network.max_open_files
     network.max_open_files.set
 
-         .. code-block:: ini
+         .. code-block:: rtorrentrc
 
             network.max_open_files ≫ value <max>
             network.max_open_files.set = value <max> ≫ 0
@@ -157,7 +157,7 @@
     network.max_open_sockets.set
     network.open_sockets
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.max_open_sockets ≫ value <max>
            network.max_open_sockets.set = value <max> ≫ 0
@@ -177,7 +177,7 @@
     network.port_range
     network.port_range.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.port_open ≫ <bool> (0 or 1)
            network.port_open.set = <bool> (0 or 1) ≫ 0
@@ -199,7 +199,7 @@
     network.proxy_address
     network.proxy_address.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.proxy_address ≫  <address>
            network.proxy_address.set = <address> ≫ 0
@@ -211,7 +211,7 @@
 
         Example:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.proxy_address.set=proxy.example.com:8080
 
@@ -224,7 +224,7 @@
     network.send_buffer.size
     network.send_buffer.size.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.receive_buffer.size ≫ value ‹size›
            network.receive_buffer.size.set = ‹size› ≫ 0
@@ -245,7 +245,7 @@
     network.scgi.dont_route
     network.scgi.dont_route.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.scgi.dont_route ≫ bool (0 or 1)
            network.scgi.dont_route.set = ‹bool› (0 or 1) ≫ 0
@@ -260,7 +260,7 @@
     scgi_port
     network.scgi.open_port
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.scgi.open_local = string ‹path› ≫ 0
            network.scgi.open_port = string ‹domain_or_ip›:‹port› ≫ 0
@@ -282,7 +282,7 @@
 
     network.tos.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.tos.set = ‹flag› ≫ 0
 
@@ -306,7 +306,7 @@
 
     network.xmlrpc.dialect.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.xmlrpc.dialect.set = ‹dialect [value 0…2]› ≫ 0
 
@@ -328,7 +328,7 @@
     network.xmlrpc.size_limit
     network.xmlrpc.size_limit.set
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
            network.xmlrpc.size_limit = ≫ value ‹bytes›
            network.xmlrpc.size_limit.set = ‹max-size› ≫ 0
@@ -349,7 +349,7 @@
 
         Add these lines to your configuration:
 
-        .. code-block:: ini
+        .. code-block:: rtorrentrc
 
             # rTorrent-PS 0.*+ only!
 
