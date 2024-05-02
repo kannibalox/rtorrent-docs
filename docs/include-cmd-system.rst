@@ -30,12 +30,12 @@ Call operating system commands, possibly catching their output for use within *r
         These commands either raise an error or return ``0``.
         ``execute2`` is the same as ``execute.throw``, and should be avoided.
 
-        Since internally ``spawn`` is used to call the OS command,
-        the shell is not involved and things like shell redirection will not work here.
-        There is also no reason to use shell quoting in arguments,
-        just separate them by commas.
-        If you need shell features, call ``bash -c "‹command›"``
-        like shown in this example:
+        Since internally ``spawn`` is used to call the OS command, the
+        shell is not involved and things like shell redirection will
+        not work here.  There is also no reason to use shell quoting
+        in arguments, just separate them by commas.  If you need shell
+        features, call ``bash -c "‹command›"`` like shown in this
+        example:
 
         .. code-block:: ini
 
@@ -53,10 +53,11 @@ Call operating system commands, possibly catching their output for use within *r
             execute.nothrow[.bg] = {command, arg1, arg2, ...} ≫ value ‹exit status›
 
         Like :term:`execute.throw`, but return the command's exit code
-        (*warning:* due to a bug the return code is shifted by 8 bits, so ``1`` becomes ``0x100``).
+        (*warning:* due to a bug the return code is shifted by 8 bits,
+        so ``1`` becomes ``0x100``).
 
-        The ``.bg`` variant will just indicate whether
-        the child could be successfully spawned and detached.
+        The ``.bg`` variant will just indicate whether the child could
+        be successfully spawned and detached.
 
 
     execute.capture
@@ -121,15 +122,17 @@ Commands related to the operating system and the XMLRPC API.
 
             system.capabilities ≫ array ‹capabilities›
 
-        This returns protocol and version information about the XML-RPC interface implementation.
-        See `xmlrpc-c system.capabilities`_ for more.
+        This returns protocol and version information about the
+        XML-RPC interface implementation.  See
+        `xmlrpc-c system.capabilities`_ for more.
 
 
     system.multicall
 
-        Similar to :term:`d.multicall2`, this allows multiple commands to be sent in one request.
-        Unlike :term:`d.multicall2`, this is a generic multicall not specific to rTorrent.
-        See the `xmlrpc-c system.multicall docs`_ for more.
+        Similar to :term:`d.multicall2`, this allows multiple commands
+        to be sent in one request.  Unlike :term:`d.multicall2`, this
+        is a generic multicall not specific to rTorrent.  See the
+        `xmlrpc-c system.multicall docs`_ for more.
 
 
     system.daemon
@@ -137,8 +140,9 @@ Commands related to the operating system and the XMLRPC API.
 
         .. versionadded:: 0.9.7
 
-        When set to true, `rTorrent` starts in the background without any `curses` UI.
-        It can then only be controlled via XMLRPC commands and POSIX signals.
+        When set to true, `rTorrent` starts in the background without
+        any ``ncurses`` UI.  It can then only be controlled via XMLRPC
+        commands and POSIX signals.
 
         See `Daemon Mode`_ in the `rTorrent` wiki for more.
 
@@ -148,11 +152,13 @@ Commands related to the operating system and the XMLRPC API.
 
         .. versionadded:: 0.9.7
 
-        These **do** shut down `rTorrent` – either quickly, or with waiting for
-        `BitTorrent` stop events to be sent to trackers of active items.
+        Shut down `rTorrent` gracefully. The ``normal`` version waits
+        for `BitTorrent` stop events to be sent to trackers of all
+        active items, while the ``quick`` version does not.
 
-        In older versions of `rTorrent`, the only way to shut down the client
-        without user interaction is to send a signal, read on for that…
+        In older versions of `rTorrent`, the only way to shut down the
+        client without using ``^Q`` in the terminal UI is to send a
+        signal:
 
         .. _posix-signals:
 
@@ -160,19 +166,23 @@ Commands related to the operating system and the XMLRPC API.
 
         ``SIGINT`` and ``SIGHUP`` act like ``system.shutdown.normal``,
         while ``SIGTERM`` is equivalent to ``system.shutdown.quick``.
-        ``SIGHUP`` support exists in `rTorrent-PS` and since `rTorrent` 0.9.7.
+        ``SIGHUP`` support exists in `rTorrent-PS` and since
+        `rTorrent` 0.9.7.
 
         ``SIGWINCH`` causes a forced canvas redraw.
 
-        ``SIGPIPE`` is generally ignored, and ``SIGUSR1`` ‘does nothing’.
+        ``SIGPIPE`` is generally ignored, and ``SIGUSR1`` ‘does
+        nothing’.
 
-        ``SIGSEGV``, ``SIGILL``, and ``SIGFPE`` cause panic,
-        meaning things are cleaned up if possible, before exiting the client.
-        Also a stack dump is created, if that was enabled during compilation.
+        ``SIGSEGV``, ``SIGILL``, and ``SIGFPE`` cause a panic, meaning
+        things are cleaned up if possible, before exiting the client.
+        Also a stack dump is created, if that was enabled during
+        compilation.
 
-        ``SIGBUS`` behaves almost the same (exits the client),
-        but also prints some additional information regarding the signal reason,
-        like *Invalid address alignment* or *Non-existent physical address*.
+        ``SIGBUS`` behaves almost the same as ``SIGSEGV`` (exits the
+        client), but also prints some additional information regarding
+        the signal reason, like *Invalid address alignment* or
+        *Non-existent physical address*.
 
 
     system.shutdown
@@ -181,7 +191,6 @@ Commands related to the operating system and the XMLRPC API.
         It's a built-in of the `xmlrpc-c` library.
 
         See also :term:`system.shutdown.normal` and  :term:`system.shutdown.quick`.
-
 
     system.api_version
     system.client_version
@@ -193,9 +202,11 @@ Commands related to the operating system and the XMLRPC API.
             system.client_version ≫ string ‹version›
             system.library_version ≫ string ‹version›
 
-        The versions of the XMLRPC API, the `rTorrent` client, and the `libtorrent` library respectively.
-        The client and library versions are currently tightly coupled, while ``system.api_version``
-        is incremented whenever changes are made to the XMLRPC API.
+        The versions of the XMLRPC API, the `rTorrent` client, and the
+        `libtorrent` library respectively.  The client and library
+        versions are currently tightly coupled, while
+        ``system.api_version`` is incremented whenever changes are
+        made to the XMLRPC API.
 
 
     system.client_version.as_value
