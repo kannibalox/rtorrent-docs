@@ -87,7 +87,7 @@ You have to tell rTorrent which comma belongs to the inner argument
 list, and which to the outer one, by quoting the inner command using
 double quotation marks:
 
-.. code-block:: ini
+.. code-block:: rtorrentrc
 
     outer = arg1, "inner=arg21,arg22", arg3
 

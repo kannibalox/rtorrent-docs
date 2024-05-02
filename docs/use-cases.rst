@@ -301,7 +301,7 @@ The result is a very simple form of bandwidth shaping,
 with full speed transfers enabled while you're at work (about 16 MiB/s in the example),
 and only very moderate bandwidth usage when you're at home.
 
-.. code-block:: ini
+.. code-block:: rtorrentrc
 
     schedule2 = throttle_full, 10:00:00, 24:00:00, ((throttle.global_down.max_rate.set_kb, 16000))
     schedule2 = throttle_slow, 16:00:00, 24:00:00, ((throttle.global_down.max_rate.set_kb,  1000))

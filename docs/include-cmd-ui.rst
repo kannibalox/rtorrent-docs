@@ -14,7 +14,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-            ui.current_view.set = ‹viewname› ≫ 0
+            ui.current_view.set = string ‹viewname› ≫ 0
             ui.current_view ≫ string ‹viewname›
 
         Query or change the current view the user is seeing.
@@ -321,7 +321,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-            view.add=‹view-name› ≫ 0
+            view.add = string ‹view-name› ≫ 0
 
         Create a new view with the given name. By default the view
         contains no items.
@@ -330,7 +330,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-            view.list ≫ [strings]
+            view.list ≫  list[string]
 
         Returns a list of all the view names.
 
@@ -338,7 +338,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-            view.size=‹view-name› ≫ value
+            view.size = string ‹view-name› ≫ value
 
         Returns the size of all items in the view.
 
@@ -346,7 +346,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-            view.persistent=‹view-name› ≫ 0
+            view.persistent = string ‹view-name› ≫ 0
 
         Marks the view as persistent. Persistent views are retained
         across restarts.
@@ -360,7 +360,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-           view.filter=‹view-name›,‹filter› ≫ 0
+           view.filter = string ‹view-name›, string‹filter› ≫ 0
 
         Sets the filter for the view. ``filter`` is a function that
         will be run against each download to determine if it should be
@@ -384,7 +384,7 @@ Commands in this group control aspects of the `curses` UI.
 
         .. code-block:: rtorrentrc
 
-           view.filter=‹view-name›, ‹event-name›,... ≫ 0
+           view.filter_on = string ‹view-name›, string ‹event-name›,... ≫ 0
 
         Tell *rTorrent* to re-filter the named view on each
         ``event-name``. ``event-name`` may be specified multiple times

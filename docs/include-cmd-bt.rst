@@ -283,7 +283,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
         and uses them to determine how to handle connections to other peers (i.e. tracker and DHT
         connections are not effected by this setting). The flags are all applied simultaneously, which
         means that certain applied flags may not take effect (e.g. for ``prefer_plaintext,require_rc4``,
-        plaintext will never used despite the flag being applied). rTorrent has support for both
+        plaintext will never be used despite the flag being applied). rTorrent has support for both
         plaintext "encryption" (uses no extra CPU cycles, provides only obfuscation of the header) and
         RC4 encryption (encrypts the entire header and message, at the cost of a few CPU cycles),
         with flags to control the behavior of both.
