@@ -21,7 +21,7 @@ jobs:
           poetry install
           poetry run bash -c 'cd docs && make html'
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload build folder
           path: 'docs/_build/html'
