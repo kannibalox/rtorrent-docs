@@ -358,27 +358,25 @@ announces.
 
         .. code-block:: rtorrentrc
 
-            throttle.down = ‹name›, ‹rate› ≫ 0
-            throttle.up = ‹name›, ‹rate› ≫ 0
+            throttle.down = string ‹name›, string ‹rate› ≫ 0
+            throttle.up = string ‹name›, string ‹rate› ≫ 0
 
-        Define a named throttle. The ``rate`` must be a string (important when using XMLRPC),
-        and is always in KiB/s.
-
-        You can also set a new rate for existing throttles this way
-        (i.e. repeated definitions are no error).
+        Update the throttle ``name`` with a new rate. if the throttle
+        does not exist, it will be created. The ``rate`` must be a
+        string (important when using XMLRPC), and is always in KiB/s.
 
     throttle.down.max
     throttle.up.max
 
         .. code-block:: rtorrentrc
 
-            throttle.down.max = ‹name› ≫ value ‹limit›
-            throttle.up.max = ‹name› ≫ value ‹limit›
+            throttle.down.max = ‹name› ≫  value ‹limit›
+            throttle.up.max = ‹name› ≫  value ‹limit›
 
         Get the current limit of a named throttle in bytes/s.
 
-        Unknown throttles return ``-1``, unlimited ones ``0``.
-        If the global throttle is not set, you also get ``0`` for any call.
+        Unknown throttles return ``-1``, unlimited ones ``0``.  If the
+        global throttle is not set, you also get ``0`` for any call.
 
     throttle.down.rate
     throttle.up.rate
@@ -388,10 +386,11 @@ announces.
             throttle.down.rate = ‹name› ≫ value ‹rate›
             throttle.up.rate = ‹name› ≫ value ‹rate›
 
-        Get the current rate of a named throttle in bytes/s, averaged over recent history.
+        Get the current rate of a named throttle in bytes/s, averaged
+        over recent history.
 
-        Unknown throttles always return ``0``.
-        If the global throttle is not set, you also get ``0`` for any call.
+        Unknown throttles always return ``0``.  If the global throttle
+        is not set, you also get ``0`` for any call.
 
     throttle.global_down.max_rate
     throttle.global_down.max_rate.set
