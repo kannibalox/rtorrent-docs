@@ -153,7 +153,7 @@ TODO (Groups)
 
         .. versionadded:: rTorrent-PS-1.1+
 
-        Returns all the mappings in the form ``«domain»=«alias»`` as a list.
+        Returns all the mappings in the form ``‹domain›=‹alias›`` as a list.
 
         Note that domains that were not explicitly defined so far, but shown
         previously, are also contained in the list, with an empty alias. So to

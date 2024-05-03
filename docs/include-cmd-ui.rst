@@ -133,7 +133,7 @@ Commands in this group control aspects of the `curses` UI.
         "blue", "magenta", "cyan", "gray", and "white".
 
         You can use those names for both text and background color,
-        in the form "«fg» on «bg»", and you can add "bright" in front of
+        in the form "‹fg› on ‹bg›", and you can add "bright" in front of
         a color to select a more luminous version. If you don't specify a color,
         the default of your terminal is used.
 

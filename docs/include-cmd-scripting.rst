@@ -503,7 +503,7 @@ Importing Script Files
         .. code-block:: rtorrentrc
 
             #import.return=
-            «here be dragons»
+            ‹here be dragons›
 
 
         Example: Protecting imports that use new features:
@@ -919,7 +919,7 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.join = «delim»[, «object»[, …]] ≫ string
+            string.join = ‹delim›[, ‹object›[, …]] ≫ string
 
         Works just like :term:`cat` (including conversion of the passed objects to strings),
         but concatenates the arguments using a provided delimiter.
@@ -937,7 +937,7 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.split = «text», «delim» ≫ array of string (parts)
+            string.split = ‹text›, ‹delim› ≫ array of string (parts)
 
         Splits an UTF-8 encoded string into parts delimited by the 2nd argument.
         If that delimiter is the empty string, you'll get a Unicode character array
@@ -958,8 +958,8 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.lpad = «text», «padlen»[, «padding»] ≫ string
-            string.rpad = «text», «padlen»[, «padding»] ≫ string
+            string.lpad = ‹text›, ‹padlen›[, ‹padding›] ≫ string
+            string.rpad = ‹text›, ‹padlen›[, ‹padding›] ≫ string
 
         Pad a string at the start or end, to the required padding length (counting UTF-8 code points).
         Strings longer than the padding length are returned unchanged.
@@ -985,9 +985,9 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.strip = «text»[, «strippable»[, …]] ≫ string
-            string.lstrip = «text»[, «head»[, …]] ≫ string
-            string.rstrip = «text»[, «tail»[, …]] ≫ string
+            string.strip = ‹text›[, ‹strippable›[, …]] ≫ string
+            string.lstrip = ‹text›[, ‹head›[, …]] ≫ string
+            string.rstrip = ‹text›[, ‹tail›[, …]] ≫ string
 
         Strips a string on both sides, or its left / right side only.
 
@@ -1012,8 +1012,8 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.map = «text», {«old»,«new»}[, …] ≫ string
-            string.replace = «text», {«old»,«new»}[, …] ≫ string
+            string.map = ‹text›, {‹old›,‹new›}[, …] ≫ string
+            string.replace = ‹text›, {‹old›,‹new›}[, …] ≫ string
 
         ``string.map`` scans a list of replacement pairs for an ``old`` text that matches
         *all* of the given string, and replaces it by ``new``.
@@ -1045,7 +1045,7 @@ Array Functions
 
         .. code-block:: rtorrentrc
 
-            array.at = «array», «pos» ≫ object (element)
+            array.at = ‹array›, ‹pos› ≫ ‹element›
 
         **TODO**
 
