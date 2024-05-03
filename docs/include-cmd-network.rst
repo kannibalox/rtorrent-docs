@@ -59,7 +59,7 @@
            network.http.proxy_address.set = string ‹address› ≫ 0
 
         Controls the HTTP proxy for announcements. See the
-        `curl documentation <https://curl.se/docs/manpage.html#-x>`_
+        `curl proxy documentation <https://curl.se/docs/manpage.html#-x>`_
         for more information.
 
         Related: See :term:`network.proxy_address` for proxying peer

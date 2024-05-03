@@ -1,7 +1,7 @@
 .. _method-commands:
 
 ``method.*`` commands
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 .. glossary::
 

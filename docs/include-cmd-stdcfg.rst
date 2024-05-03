@@ -109,15 +109,6 @@ In addition to the commands listed here, `pyrocore` also defines :term:`d.data_p
         :term:`d.delete_tied` does not change it.
 
 
-    d.timestamp.last_active
-
-        Last time any peer was connected. This is checked at least once per minute,
-        but very short connections might not be recorded.
-
-        Redefine the ``pyro_update_last_active`` schedule if you want the check to
-        run at a different frequency.
-
-
     d.timestamp.last_xfer
     d.last_xfer.is_active
     pyro.last_xfer.min_rate

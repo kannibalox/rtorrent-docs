@@ -1835,15 +1835,17 @@ Index counting starts at ``0``, the array size is :term:`d.tracker_size`.
 .. _load-commands:
 
 ``load.*`` commands
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
-The client may be configured to check a directory for new metafiles and load them.
-Items loaded in this manner will be tied to the metafile's path (see :term:`d.tied_to_file`).
+The client may be configured to check a directory for new metafiles
+and load them.  Items loaded in this manner will be tied to the
+metafile's path (see :term:`d.tied_to_file`).
 
-This means when the metafile is deleted, the item may be stopped (see :term:`stop_untied`),
-and when the item is removed the metafile is also.
-Note that you can untie an item by using the ``U`` key (which will also delete the tied file),
-and using ``Ctrl-K`` also implicitly unties an item.
+This means when the metafile is deleted, the item may be stopped (see
+:term:`stop_untied`), and when the item is removed the metafile is
+also.  Note that you can untie an item by using the ``U`` key (which
+will also delete the tied file), and using ``Ctrl-K`` also implicitly
+unties an item.
 
 .. glossary::
 
@@ -1936,7 +1938,7 @@ and using ``Ctrl-K`` also implicitly unties an item.
 .. _session-commands:
 
 ``session.*`` commands
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. glossary::
 
