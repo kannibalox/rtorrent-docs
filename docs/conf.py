@@ -272,7 +272,7 @@ class CustomLexer(RegexLexer):
             (r'≫', token.Operator), # Highlight the '≫' operator
             (r'".*?"', token.String),
             (r'‹.+?›', token.Name.Variable),  # Highlight strings enclosed in '‹›' as variables
-            (r'string|integer|value|list|dictionary|value|bool|target|bytes', token.Keyword.Type),
+            (r'string|integer|value|list|dictionary|value|bool|target|bytes|type', token.Keyword.Type),
             (r'0$', token.Number),
             (r'[][]', token.Punctuation),
             (r'[^\s‹≫]+', token.Text), # Highlight any other text as plain text

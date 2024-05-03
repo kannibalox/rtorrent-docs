@@ -3,7 +3,7 @@
 ``d.*`` commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See the hint at the start of this chapter regarding the (sometimes implicit) *target* argument.
+For all ``d.*`` commands, a explicit ``target`` should be a hash, e.g. ``DDEE5CB75C12F3165EF79A12A5CD6158BEF029AD``.
 
 .. glossary::
 
@@ -69,13 +69,13 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.name = ‹hash› ≫ string ‹name›
-            d.base_filename = ‹hash› ≫ string ‹basename›
-            d.base_path = ‹hash› ≫ string ‹path›
-            d.directory = ‹hash› ≫ string ‹path›
-            d.directory_base = ‹hash› ≫ string ‹path›
-            d.directory.set = ‹hash›, ‹path› ≫ 0
-            d.directory_base.set = ‹hash›, ‹path› ≫ 0
+            d.name = target ‹hash› ≫ string ‹name›
+            d.base_filename = target ‹hash› ≫ string ‹basename›
+            d.base_path = target ‹hash› ≫ string ‹path›
+            d.directory = target ‹hash› ≫ string ‹path›
+            d.directory_base = target ‹hash› ≫ string ‹path›
+            d.directory.set = target ‹hash›, ‹path› ≫ 0
+            d.directory_base.set = target ‹hash›, ‹path› ≫ 0
 
         These commands return various forms of an item's data path and
         name, and the last two can change the path, and sometimes the
@@ -135,11 +135,11 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.state = ‹hash› ≫ bool (0 or 1)
-            d.state_changed = ‹hash› ≫ value ‹timestamp›
-            d.state_counter = ‹hash› ≫ value ‹count›
-            d.is_open = ‹hash› ≫ bool (0 or 1)
-            d.is_active = ‹hash› ≫ bool (0 or 1)
+            d.state = target ‹hash› ≫ bool (0 or 1)
+            d.state_changed = target ‹hash› ≫ value ‹timestamp›
+            d.state_counter = target ‹hash› ≫ value ‹count›
+            d.is_open = target ‹hash› ≫ bool (0 or 1)
+            d.is_active = target ‹hash› ≫ bool (0 or 1)
 
         These commands return the item's state (1 = started or paused, 0 = stopped),
         when that changed the last time, and how often it did change.
@@ -201,9 +201,9 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
        .. code-block:: rtorrentrc
 
-            d.accepting_seeders = ‹hash› ≫ bool (0 or 1)
-            d.accepting_seeders.disable = ‹hash› ≫ 0
-            d.accepting_seeders.enable = ‹hash› ≫ 0
+            d.accepting_seeders = target ‹hash› ≫ bool (0 or 1)
+            d.accepting_seeders.disable = target ‹hash› ≫ 0
+            d.accepting_seeders.enable = target ‹hash› ≫ 0
 
        Controls whether or not new connections to seeders are sought out. Existing connections
        are not effected.
@@ -213,7 +213,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.bitfield = ‹hash› ≫ string ‹bitfield›
+            d.bitfield = target ‹hash› ≫ string ‹bitfield›
 
         Returns the bitfield represented by a string of hexadecimal digits, with each character
         representing the "completeness" of each field. Note that due to rounding inaccuracies,
@@ -225,7 +225,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.bytes_done = ‹hash› ≫ value ‹bytes›
+            d.bytes_done = target ‹hash› ≫ value ‹bytes›
 
         This tracks the amount of bytes for a torrent which has been accepted from peers.
         Note that bytes aren't considered to be "completed" until the full chunk is
@@ -237,7 +237,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.check_hash = ‹hash› ≫ 0
+            d.check_hash = target ‹hash› ≫ 0
 
         Checks the piece hashes of an item against its data.
         Started items are paused during the rehashing.
@@ -247,7 +247,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.chunk_size = ‹hash› ≫ value ‹size›
+            d.chunk_size = target ‹hash› ≫ value ‹size›
 
         Returns the item's chunk size in bytes (also known as the “piece size”).
 
@@ -256,7 +256,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.chunks_hashed = ‹hash› ≫ value ‹chunks›
+            d.chunks_hashed = target ‹hash› ≫ value ‹chunks›
 
         While a torrent is hash checking, this tracks the number of chunks that have
         successfully hashed.
@@ -270,8 +270,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.complete = ‹hash› ≫ bool (0 or 1)
-            d.incomplete = ‹hash› ≫ bool (0 or 1)
+            d.complete = target ‹hash› ≫ bool (0 or 1)
+            d.incomplete = target ‹hash› ≫ bool (0 or 1)
 
         Indicates whether an item is complete (100% done) or not.
 
@@ -281,8 +281,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.completed_bytes = ‹hash› ≫ value ‹bytes›
-            d.completed_chunks = ‹hash› ≫ value ‹chunks›
+            d.completed_bytes = target ‹hash› ≫ value ‹bytes›
+            d.completed_chunks = target ‹hash› ≫ value ‹chunks›
 
         Returns the number of completed bytes and chunks, respectively.
         "Completed" means the bytes/chunk has been downloaded and verified against the hash.
@@ -319,7 +319,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.delete_tied = ‹hash› ≫ 0
+            d.delete_tied = target ‹hash› ≫ 0
 
         Delete the :term:`d.tied_to_file`, which obviously also unties the item.
         This command is bound to the ``U`` key by default, and also called whenever
@@ -339,7 +339,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.creation_date = ‹hash› ≫ value ‹timestamp›
+            d.creation_date = target ‹hash› ≫ value ‹timestamp›
 
         Returns a timestamp reflecting the .torrent file creation date (i.e. separate
         from the date the item was loaded into the client). This value can be inspected with
@@ -363,10 +363,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom[_throw] = ‹hash›, string ‹key› ≫ string ‹value›
-            d.custom.set = ‹hash›, string ‹key›, string ‹value› ≫ 0
-            d.custom1 = ‹hash› ≫ string ‹value›
-            d.custom1.set = ‹hash›, string ‹value› ≫ 0
+            d.custom[_throw] = target ‹hash›, string ‹key› ≫ string ‹value›
+            d.custom.set = target ‹hash›, string ‹key›, string ‹value› ≫ 0
+            d.custom1 = target ‹hash› ≫ string ‹value›
+            d.custom1.set = target ‹hash›, string ‹value› ≫ 0
 
         Set and return custom values using either arbitrary keys, or a limited set of 5 numbered slots.
         Note that ``d.custom1`` is *not* the same as ``d.custom=1`` or ``d.custom=custom1``,
@@ -392,7 +392,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.if_z = ‹hash›, string ‹key›, string ‹default› ≫ string ‹value›
+            d.custom.if_z = target ‹hash›, string ‹key›, string ‹default› ≫ string ‹value›
 
         Just like :term:`d.custom`, but returns the `‹default›` value if the `‹key›` does not exist,
         or if its value is empty.
@@ -411,7 +411,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.set_if_z = ‹hash›, string ‹key›, string ‹value› ≫ 0
+            d.custom.set_if_z = target ‹hash›, string ‹key›, string ‹value› ≫ 0
 
         This is a companion to :term:`d.custom.if_z` and sets a custom value only once,
         if it was missing or empty previously.
@@ -430,7 +430,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.erase = ‹hash›, string ‹key›[, …] ≫ 0
+            d.custom.erase = target ‹hash›, string ‹key›[, …] ≫ 0
 
         Removes the given custom key(s) – erasing non-existent keys is not an error.
 
@@ -448,7 +448,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.toggle = ‹hash›, string ‹key› ≫ value ‹negated›
+            d.custom.toggle = target ‹hash›, string ‹key› ≫ value ‹negated›
 
         Inverts the truthiness of a custom attribute using ``0`` or ``1`` as the only results.
         Empty strings and ``0`` become ``1``, and any other string becomes ``0``.
@@ -469,7 +469,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.as_value = ‹hash›, string ‹key› ≫ value ‹number›
+            d.custom.as_value = target ‹hash›, string ‹key› ≫ value ‹number›
 
         Returns a custom attribute as a *value* (base 10 integer).
         Missing keys and empty strings are ``0``,
@@ -491,7 +491,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.keys = ‹hash› ≫ list of string ‹defined keys›
+            d.custom.keys = target ‹hash› ≫ list of string ‹defined keys›
 
         Returns a list of custom keys that are defined for an item.
 
@@ -509,7 +509,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.custom.items = ‹hash› ≫ map of key / value strings ‹defined items›
+            d.custom.items = target ‹hash› ≫ map of key / value strings ‹defined items›
 
         Returns keys and their associated values, for all custom values of an item.
 
@@ -529,7 +529,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.disconnect.seeders = ‹hash› ≫ 0
+            d.disconnect.seeders = target ‹hash› ≫ 0
 
         Cleanly drop all connections to seeders. This does not prevent them from
         reconnecting later on.
@@ -547,8 +547,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.down.rate = ‹hash› ≫ value ‹rate (bytes/s)›
-            d.down.total = ‹hash› ≫ value ‹total (bytes)›
+            d.down.rate = target ‹hash› ≫ value ‹rate (bytes/s)›
+            d.down.total = target ‹hash› ≫ value ‹total (bytes)›
 
         The total amount and current rate of download traffic for this item.
         It's possible for the total download to be greater than :term:`d.size_bytes`,
@@ -562,10 +562,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.downloads_max = ‹hash› ≫ value ‹max›
-            d.downloads_max.set = ‹hash›, value ‹max› ≫ 0
-            d.downloads_min = ‹hash› ≫ value ‹max›
-            d.downloads_min.set = ‹hash›, value ‹max› ≫ 0
+            d.downloads_max = target ‹hash› ≫ value ‹max›
+            d.downloads_max.set = target ‹hash›, value ‹max› ≫ 0
+            d.downloads_min = target ‹hash› ≫ value ‹max›
+            d.downloads_min.set = target ‹hash›, value ‹max› ≫ 0
 
         Control the maximum and minimum download slots that should be used per item.
         *rTorrent* will attempt to balance the number of active connections so that
@@ -581,7 +581,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.erase = ‹hash› ≫ 0
+            d.erase = target ‹hash› ≫ 0
 
         The item is marked as hash-failed (to invalidate it until it is totally gone) and closed.
         Any associated session files are removed.
@@ -596,7 +596,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.free_diskspace = ‹hash› ≫ value ‹bytes›
+            d.free_diskspace = target ‹hash› ≫ value ‹bytes›
 
         Return the *minimum* free space of devices where files of the item reside on.
         In the usual case without symlinks and the like, it's the free space of the drive
@@ -615,7 +615,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
        .. code-block:: rtorrentrc
 
-            d.hash = ‹hash› ≫ string ‹hash›
+            d.hash = target ‹hash› ≫ string target ‹hash›
 
        Returns the hash of the torrent in hexadecimal form, with uppercase letters.
        The most common use is in the command list of a :term:`d.multicall2`,
@@ -630,7 +630,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
        .. code-block:: rtorrentrc
 
-            d.hashing = ‹hash› ≫ value ‹hash_status›
+            d.hashing = target ‹hash› ≫ value ‹hash_status›
 
        Returns an integer denoting the state of the hash process. The possible values are:
 
@@ -647,8 +647,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.hashing_failed = ‹hash› ≫ bool (0 or 1)
-            d.hashing_failed.set = ‹hash›, bool (0 or 1) ≫ 0
+            d.hashing_failed = target ‹hash› ≫ bool (0 or 1)
+            d.hashing_failed.set = target ‹hash›, bool (0 or 1) ≫ 0
 
         Checks to see if the hashing has failed or not. This flag is primarily used to determine
         whether or not a torrent should be marked for hashing when it's started/resumed.
@@ -658,8 +658,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.ignore_commands = ‹hash› ≫ bool (0 or 1)
-            d.ignore_commands.set = ‹hash›, bool (0 or 1) ≫ 0
+            d.ignore_commands = target ‹hash› ≫ bool (0 or 1)
+            d.ignore_commands.set = target ‹hash›, bool (0 or 1) ≫ 0
 
         The ignore flag controls the :term:`d.try_close`, :term:`d.try_start`, and :term:`d.try_stop`
         commands, and if set to true exclude the item at hand from reacting to those commands.
@@ -672,8 +672,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.is_hash_checked = ‹hash› ≫ bool (0 or 1)
-            d.is_hash_checking = ‹hash› ≫ bool (0 or 1)
+            d.is_hash_checked = target ‹hash› ≫ bool (0 or 1)
+            d.is_hash_checking = target ‹hash› ≫ bool (0 or 1)
 
         These mark the hashing state of a torrent. ``d.is_hash_checked`` is counter-intuitive in that
         regardless of how much the torrent has successfully completed hash checking, if a torrent is active
@@ -686,7 +686,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.is_meta = ‹hash› ≫ bool (0 or 1)
+            d.is_meta = target ‹hash› ≫ bool (0 or 1)
 
         Meta torrents refer to magnet torrents which are still in the process of gathering data from trackers/peers.
         Once enough data is collected, the meta torrent is removed and a "regular" torrent is created. Since meta
@@ -696,7 +696,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.is_multi_file = ‹hash› ≫ bool (0 or 1)
+            d.is_multi_file = target ‹hash› ≫ bool (0 or 1)
 
         Returns ``1`` if the torrents is marked as having multiple files, ``0`` if it's a single file.
         Note that multifile-marked torrents are able to only have 1 actual file in them. See :term:`d.size_files`
@@ -713,7 +713,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.is_pex_active = ‹hash› ≫ bool (0 or 1)
+            d.is_pex_active = target ‹hash› ≫ bool (0 or 1)
 
         Return whether `PEX`_ is active for this item.
         See :term:`protocol.pex` to determine if PEX is active globally.
@@ -723,7 +723,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.is_private = ‹hash› ≫ bool (0 or 1)
+            d.is_private = target ‹hash› ≫ bool (0 or 1)
 
         Indicates if the private flag is set. If it is, the client will not attempt to find new peers
         in addition to what a tracker returned (i.e. PEX and DHT are inactive).
@@ -733,7 +733,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.left_bytes = ‹hash› ≫ value ‹bytes›
+            d.left_bytes = target ‹hash› ≫ value ‹bytes›
 
         Tracks the number of bytes that have yet to be downloaded. See :term:`d.bytes_done` for the
         inverse value, e.g. ``d.left_bytes`` plus :term:`d.bytes_done` will always equal :term:`d.size_bytes`.
@@ -743,7 +743,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.load_date = ‹hash› ≫ value ‹time›
+            d.load_date = target ‹hash› ≫ value ‹time›
 
         Returns the timestamp of when the torrent was loaded into the client. This is the value used when comparing
         fast-resume data against the actual files. Note that all torrents are considered to be newly loaded when
@@ -755,8 +755,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.local_id = ‹hash› ≫ string ‹ID›
-            d.local_id_html = ‹hash› ≫ string ‹ID›
+            d.local_id = target ‹hash› ≫ string ‹ID›
+            d.local_id_html = target ‹hash› ≫ string ‹ID›
 
         Returns the peer ID assigned to this item. This is the same value that is sent to the tracker when
         announces are done. ``d.local_id`` returns a hex string, while ``d.local_id_html`` returns the value
@@ -768,8 +768,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.max_file_size = ‹hash› ≫ value ‹bytes›
-            d.max_file_size.set = ‹hash›, value ‹bytes› ≫ 0
+            d.max_file_size = target ‹hash› ≫ value ‹bytes›
+            d.max_file_size.set = target ‹hash›, value ‹bytes› ≫ 0
 
         Controls the maximum size of any file in the item.
         If a file exceeds this amount, the torrent cannot be opened and an error will be shown.
@@ -789,9 +789,9 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.message = ‹hash› ≫ string ‹message›
-            d.message.set = ‹hash›, string ‹message› ≫ 0
-            d.message.alert = ‹hash› ≫ value ‹category›
+            d.message = target ‹hash› ≫ string ‹message›
+            d.message.set = target ‹hash›, string ‹message› ≫ 0
+            d.message.alert = target ‹hash› ≫ value ‹category›
 
         Used to store messages relating to the item, such as errors
         in communicating with the tracker or a hash check failure.
@@ -822,8 +822,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.peer_exchange = ‹hash› ≫ bool (0 or 1)
-            d.peer_exchange.set = ‹hash›, bool (0 or 1) ≫ 0
+            d.peer_exchange = target ‹hash› ≫ bool (0 or 1)
+            d.peer_exchange.set = target ‹hash›, bool (0 or 1) ≫ 0
 
         Determines if `PEX`_ is enabled for this item. By default this is set to the value of
         :term:`protocol.pex`.
@@ -842,10 +842,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.peer_max = ‹hash› ≫ value
-            d.peer_max.set = ‹hash›, value ‹max› ≫ 0
-            d.peer_min = ‹hash› ≫ value
-            d.peer_min.set = ‹hash›, value ‹min› ≫ 0
+            d.peer_max = target ‹hash› ≫ value
+            d.peer_max.set = target ‹hash›, value ‹max› ≫ 0
+            d.peer_min = target ‹hash› ≫ value
+            d.peer_min.set = target ‹hash›, value ‹min› ≫ 0
 
         If both:
 
@@ -867,9 +867,9 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.priority = ‹hash› ≫ value ‹prio›
-            d.priority.set = ‹hash›, value ‹prio› ≫ 0
-            d.priority_str = ‹hash› ≫ string ‹name›
+            d.priority = target ‹hash› ≫ value ‹prio›
+            d.priority.set = target ‹hash›, value ‹prio› ≫ 0
+            d.priority_str = target ‹hash› ≫ string ‹name›
 
         Controls the priority of the item. The possible settings (and the associated value)
         are as follows:
@@ -910,10 +910,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.size_bytes = ‹hash› ≫ value ‹bytes›
-            d.size_chunks = ‹hash› ≫ value ‹chunks›
-            d.size_files = ‹hash› ≫ value ‹files›
-            d.size_pex = ‹hash› ≫ value ‹peers›
+            d.size_bytes = target ‹hash› ≫ value ‹bytes›
+            d.size_chunks = target ‹hash› ≫ value ‹chunks›
+            d.size_files = target ‹hash› ≫ value ‹files›
+            d.size_pex = target ‹hash› ≫ value ‹peers›
 
         Returns the various size attributes of an item.
 
@@ -928,8 +928,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.skip.rate = ‹hash› ≫ value ‹rate›
-            d.skip.total = ‹hash› ≫ value ‹total›
+            d.skip.rate = target ‹hash› ≫ value ‹rate›
+            d.skip.total = target ‹hash› ≫ value ‹total›
 
         Skipped pieces are ones that were received from peers, but weren't needed and thus ignored.
         These values are part of the main download statistics, i.e. :term:`d.down.rate` and :term:`d.down.total`.
@@ -945,8 +945,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.timestamp.finished = ‹hash› ≫ value ‹epoch›
-            d.timestamp.started = ‹hash› ≫ value ‹epoch›
+            d.timestamp.finished = target ‹hash› ≫ value ‹epoch›
+            d.timestamp.started = target ‹hash› ≫ value ‹epoch›
 
         Returns the time (as an `epoch <https://en.wikipedia.org/wiki/Unix_time>`_ integer) the item was finished or started.
         These values are set when :term:`event.download.finished` and :term:`event.download.resumed` are triggered,
@@ -977,7 +977,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.tracker.insert = ‹hash›, value ‹group›, string ‹url› ≫ 0
+            d.tracker.insert = target ‹hash›, value ‹group›, string ‹url› ≫ 0
 
         Inserts a tracker into a tracker group. A tracker group can be
         numbered from 0-32, and consists of multiple URLs.
@@ -987,7 +987,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.tracker.send_scrape = ‹hash›, value ‹delay› ≫ 0
+            d.tracker.send_scrape = target ‹hash›, value ‹delay› ≫ 0
 
         Manually triggers a `scrape request`_ after ``delay`` seconds. See `auto-scrape.rc`_ for an automated *rTorrent* scraping
         system.
@@ -1000,7 +1000,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.tracker_announce = ‹hash› ≫ 0
+            d.tracker_announce = target ‹hash› ≫ 0
 
         Manually triggers a tracker announce. The ``.force`` variant ignores the minimum interval set by the tracker.
 
@@ -1010,8 +1010,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.tracker_focus = ‹hash› ≫ value ‹num›
-            d.tracker_size = ‹hash› ≫ value ‹num›
+            d.tracker_focus = target ‹hash› ≫ value ‹num›
+            d.tracker_size = target ‹hash› ≫ value ‹num›
 
         Returns the number of trackers assigned to the torrent.
 
@@ -1021,8 +1021,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.tracker_numwant = ‹hash› ≫ value ‹numwant›
-            d.tracker_numwant.set = ‹hash›, value ‹numwant› ≫ 0
+            d.tracker_numwant = target ‹hash› ≫ value ‹numwant›
+            d.tracker_numwant.set = target ‹hash›, value ‹numwant› ≫ 0
 
         Controls the `optional numwant parameter`_ sent to the
         tracker. By default it's set to the value of
@@ -1047,8 +1047,8 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.up.rate = ‹hash› ≫ value ‹rate [bytes/s]›
-            d.up.total = ‹hash› ≫ value ‹total [bytes]›
+            d.up.rate = target ‹hash› ≫ value ‹rate [bytes/s]›
+            d.up.total = target ‹hash› ≫ value ‹total [bytes]›
 
         The total amount and current rate of upload traffic for this item.
 
@@ -1057,7 +1057,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.update_priorities = ‹hash› ≫ 0
+            d.update_priorities = target ‹hash› ≫ 0
 
         After a scripted change to priorities using :term:`f.priority.set`,
         this command **must** be called. It updates the internal state of a
@@ -1071,10 +1071,10 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.uploads_max = ‹hash› ≫ value ‹max›
-            d.uploads_max.set = ‹hash›, value ‹max› ≫ 0
-            d.uploads_min = ‹hash› ≫ value ‹min›
-            d.uploads_min.set = ‹hash›, value ‹min› ≫ 0
+            d.uploads_max = target ‹hash› ≫ value ‹max›
+            d.uploads_max.set = target ‹hash›, value ‹max› ≫ 0
+            d.uploads_min = target ‹hash› ≫ value ‹min›
+            d.uploads_min.set = target ‹hash›, value ‹min› ≫ 0
 
         Control the maximum and minimum upload slots that should be used.
         *rTorrent* will attempt to balance the number of active connections so that
@@ -1095,7 +1095,7 @@ See the hint at the start of this chapter regarding the (sometimes implicit) *ta
 
         .. code-block:: rtorrentrc
 
-            d.wanted_chunks = ‹hash› ≫ value ‹chunks›
+            d.wanted_chunks = target ‹hash› ≫ value ‹chunks›
 
         The number of chunks *rTorrent* wants to download. Contrast with :term:`d.completed_chunks`,
         although ``d.wanted_chunks`` will not count chunks from files prioritized as "off" as wanted. See
