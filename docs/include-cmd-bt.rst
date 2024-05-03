@@ -265,7 +265,40 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
     protocol.choke_heuristics.up.seed
     protocol.choke_heuristics.up.seed.set
 
-        **TODO**
+        .. warning::
+
+            The following is only documented for informational
+            purposes. Changing the choke heuristics from the defaults
+            should not be done.
+
+        The choke heuristics determine the process by which rTorrent
+        decides which peer to choke/unchoke. There are 4 heuristics at
+        play, each with a choke and unchoke weight process:
+
+        - ``upload_leech`` ``choke``: weight according to our download
+          rate from them
+        - ``upload_leech`` ``unchoke``: weight according to our
+          download rate from them, with a random component for
+          currently choked peers.
+        - ``upload_seed`` ``choke``: weight according to our download
+          rate from them
+        - ``upload_seed`` ``unchoke``: weight by if the peer is
+          preferred, then randomly in each group
+        - ``upload_leech_experimental`` ``choke``: Don't re-choke
+          peers that have recently been unchoked. Weight preferred
+          peers higher, and then by our download rate from them.
+        - ``upload_leech_experimental`` ``unchoke``: weight according
+          to our download rate from them, with a random component for
+          currently choked peers
+        - ``download_leech`` ``choke``: weight according to our
+          download rate from them
+        - ``download_leech`` ``unchoke``: weight according to our
+          download rate from them
+
+    choke_group.tracker.mode
+    choke_group.tracker.mode.set
+
+        Does not appear to have any functionality.
 
     protocol.connection.leech
     protocol.connection.leech.set
