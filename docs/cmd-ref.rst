@@ -34,10 +34,11 @@ The following are similar, but incomplete resources:
 
 -  `PyroScope's reference`_
 -  `Fandom.com Reference`_
+-  `rTorrent Github Wiki Reference`_
 
 .. _PyroScope's reference: https://github.com/pyroscope/pyroscope/blob/wiki/RtXmlRpcReference.md
 .. _Fandom.com Reference: https://scratchpad.fandom.com/wiki/RTorrentCommands
-
+.. _rTorrent Github Wiki Reference: https://github.com/rakshasa/rtorrent/wiki/Scripting-Guide
 
 Download Items and Attributes
 -----------------------------
@@ -99,8 +100,15 @@ TODO (Groups)
     directory.default.set
     directory
 
-        **TODO**
+        .. code-block:: rtorrentrc
 
+            directory = string ‹path› ≫ 0
+            directory.default.set = string ‹path› ≫ 0
+            directory.default ≫ string ‹path›
+
+        Sets/gets the default ``d.directory`` for new
+        torrents. ``directory`` is an alias for
+        ``directory.default.set``.
 
 
 .. glossary::
@@ -123,8 +131,8 @@ TODO (Groups)
 
         .. code-block:: rtorrentrc
 
-            trackers.numwant = ‹hash› ≫ value ‹numwant›
-            trackers.numwant.set = ‹hash›, value ‹numwant› ≫ 0
+            trackers.numwant ≫ value ‹numwant›
+            trackers.numwant.set = value ‹numwant› ≫ 0
 
         Sets the default value for :term:`d.tracker_numwant`. Defaults
         to ``-1``.
@@ -134,7 +142,7 @@ TODO (Groups)
 
         .. code-block:: rtorrentrc
 
-            trackers.use_udp = bool (0 or 1)
+            trackers.use_udp ≫  bool (0 or 1)
             trackers.use_udp.set = bool (0 or 1) ≫ 0
 
         If set to false, newly added torrents will have all UDP
@@ -175,8 +183,6 @@ TODO (Groups)
 
         Sets an alias that replaces the given domain, when displayed on the
         right of the collapsed canvas.
-
-        .. rubric:: Configuration Example
 
         .. code-block:: rtorrentrc
 
