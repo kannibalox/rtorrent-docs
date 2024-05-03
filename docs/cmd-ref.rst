@@ -10,26 +10,6 @@ and :ref:`xmlrpc-api` for some general hints on using the XMLRPC API
 or the :ref:`search`.
 The :ref:`generated index <genindex>` also lists all the command names.
 
-.. important::
-
-    All ``d.*`` commands take an info hash as the first argument when called over the XML-RPC API,
-    to uniquely identify the *target* object. ‘Target’ is the term used for that 1st parameter in
-    error messages and so on.
-
-      .. code-block:: rtorrentrc
-
-         d.name = ‹hash› ≫ string ‹name›
-
-    When called within configuration methods or in a ``Ctrl-X`` prompt, the target is implicit.
-    It is explicit and *must* be provided for all XMLRPC calls, with very few exceptions like the
-    `xmlrpc-c` built-ins.
-
-    Also note that :command:`rtxmlrpc` has some magic that adds this to any command ending in
-    ``.multicall`` or ``.multicall.filtered``, from the time this change was introduced.
-    :term:`d.multicall2` came later and thus needs an explicit target, and it is a bit of a mess.
-    Changing this to be consistent is a breaking change, and might happen sometime in the future.
-
-
 The following are similar, but incomplete resources:
 
 -  `PyroScope's reference`_
@@ -39,6 +19,54 @@ The following are similar, but incomplete resources:
 .. _PyroScope's reference: https://github.com/pyroscope/pyroscope/blob/wiki/RtXmlRpcReference.md
 .. _Fandom.com Reference: https://scratchpad.fandom.com/wiki/RTorrentCommands
 .. _rTorrent Github Wiki Reference: https://github.com/rakshasa/rtorrent/wiki/Scripting-Guide
+
+Format
+^^^^^^
+
+All commands will appear in the following format:
+
+.. glossary::
+
+   command_name
+
+        .. code-block:: rtorrentrc
+
+            command_name = type ‹argument› ≫ type ‹returned value›
+
+        All commands are formatted with a similar syntax as they would
+        appear in ``rtorrent.rc``. This section would normally contain
+        a description of what the command does, along with any
+        examples or references.
+
+.. important::
+
+    All commands take a first argument, called ``target``
+    internally. This argument is given implicitly in ``rtorrent.rc``
+    and the kbd:`Ctrl-X` prompt, but must be given explicitly when
+    using the XML-RPC API.
+
+    All of the ``d.*``, ``f.*`` and ``p.*`` commands must have a valid
+    target, the format of which is documented at the top of their
+    sections. Commands that require a target to be supplied, even if
+    implicitly, will have it documented as an argument.  Any commands
+    that don't require a valid target should give an empty string as
+    their first argument instead.
+
+
+    ``rtorrent.rc`` format:
+      .. code-block:: rtorrentrc
+
+         d.name=
+         d.multicall2=main,d.start=
+         directory.default.set=/var/data/
+
+    ``XML-RPC`` format:
+      .. code-block:: rtorrentrc
+
+         rtxmlrpc d.name DDEE5CB75C12F3165EF79A12A5CD6158BEF029AD
+         rtxmlrpc d.multicall2 '' main d.start=
+         rtxmlrpc directory.default.set '' /var/data/
+
 
 Download Items and Attributes
 -----------------------------
