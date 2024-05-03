@@ -776,8 +776,8 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            cat=«text»[,…] ≫ string
-            cat={"array", "of", "text"}[,…] ≫ string
+            cat = string ‹text›[,…] ≫ string
+            cat={"list", "of", "text"}[,…] ≫ string
 
         ``cat`` takes a list of object arguments, or an array of objects,
         and smushes them all together with no delimiter
@@ -802,7 +802,7 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.len = «text» ≫ value (length)
+            string.len = string ‹text› ≫ value ‹length›
 
         Returns the length of an UTF-8 encoded string in terms of Unicode characters.
 
@@ -822,9 +822,9 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.equals = «text», «other»[, …] ≫ bool (0 or 1)
-            string.startswith = «text», «prefix»[, …] ≫ bool (0 or 1)
-            string.endswith = «text», «tail»[, …] ≫ bool (0 or 1)
+            string.equals = ‹text›, ‹other›[, …] ≫ bool (0 or 1)
+            string.startswith = ‹text›, ‹prefix›[, …] ≫ bool (0 or 1)
+            string.endswith = ‹text›, ‹tail›[, …] ≫ bool (0 or 1)
 
         Checks whether the first argument is equal to, starts with, or ends with another string.
 
@@ -853,7 +853,7 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.contains[_i] = «haystack», «needle»[, …] ≫ bool (0 or 1)
+            string.contains[_i] = ‹haystack›, ‹needle›[, …] ≫ bool (0 or 1)
 
         Checks if a given string contains any of the strings following it.
         The variant with ``_i`` is case-ignoring, but *only* works for pure ASCII needles.
@@ -872,15 +872,15 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.substr = «text»[, «pos»[, «count»[, «default»]]] ≫ string
+            string.substr = ‹text›[, ‹pos›[, ‹count›[, ‹count›]]] ≫ string
 
         Returns part of an UTF-8 encoded string.
         The positional arguments can be passed as either strings (base 10) or values,
         and they count Unicode characters.
-        A negative *«pos»* is relative to the end of the string.
+        A negative ``pos`` is relative to the end of the string.
 
-        When *«pos»* is outside the string bounds (including ‘at the end’),
-        then *«default»* is returned when provided,
+        When ``pos`` is outside the string bounds (including ‘at the end’),
+        then ``pos`` is returned when provided,
         instead of an empty string.
 
         Examples:
@@ -897,14 +897,14 @@ String Functions
 
         .. code-block:: rtorrentrc
 
-            string.shorten = «text»[, «maxlen»[, «tail»]] ≫ string
+            string.shorten = ‹text›[, ‹maxlen›[, ‹tail›]] ≫ string
 
-        Returns a condensed version of a UTF-8 encoded string,  no longer than *«maxlen»*,
+        Returns a condensed version of a UTF-8 encoded string,  no longer than ``maxlen``,
         by replacing a middle piece of it with ``…`` if necessary.
         The length arguments can be passed as either strings (base 10) or values,
         and they count Unicode characters.
 
-        *«tail»* determines the maximal length of the trailing part, with a default of 5.
+        ``tail`` determines the maximal length of the trailing part, with a default of 5.
 
         Examples:
 
