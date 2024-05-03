@@ -106,11 +106,11 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            system.listMethods ≫ array ‹methods›
+            system.listMethods ≫ list[string] ‹methods›
             system.methodExist = string ‹method› ≫ bool (0 or 1)
             system.methodHelp = string ‹method› ≫ string ‹help›
             system.methodSignature = string ‹method› ≫ string ‹signature›
-            system.getCapabilities ≫ array ‹capabilities›
+            system.getCapabilities ≫ list[string] ‹capabilities›
 
         XML-RPC introspection methods. For more information, see `XML-RPC Introspection`_.
         Note that no help or signature is currently defined for *rTorrent*-specific
@@ -120,7 +120,7 @@ Commands related to the operating system and the XMLRPC API.
 
         .. code-block:: rtorrentrc
 
-            system.capabilities ≫ array ‹capabilities›
+            system.capabilities ≫ list[string] ‹capabilities›
 
         This returns protocol and version information about the
         XML-RPC interface implementation.  See

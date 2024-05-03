@@ -204,7 +204,7 @@ Commands in this group control aspects of the `curses` UI.
             ui.column.hide = ‹column index›[, …] ≫ 0
             ui.column.show = ‹column index›[, …] ≫ 0
             ui.column.is_hidden = ‹column index› ≫ bool (0 or 1)
-            ui.column.hidden.list = ≫ array of value (column index list)
+            ui.column.hidden.list = ≫ list[value] ‹column indices›
 
         Hide or show columns by their index.
         The hide/show commands take any number of arguments, or a list of values.

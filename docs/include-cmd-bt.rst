@@ -504,7 +504,7 @@ announces.
         .. code-block:: rtorrentrc
 
             # rTorrent-PS 1.1+ only
-            throttle.names= ≫ array ‹names›
+            throttle.names= ≫ list[string] ‹names›
 
         Returns a list of all defined throttle names,
         including the built-in ones (i.e. ``''`` and ``'NULL'``).
