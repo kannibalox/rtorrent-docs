@@ -144,7 +144,7 @@ For all ``d.*`` commands, a explicit ``target`` should be a hash, e.g. ``DDEE5CB
         These commands return the item's state (1 = started or paused, 0 = stopped),
         when that changed the last time, and how often it did change.
         Note that although pausing / resuming a started item does not change ``state``,
-        the timestamp and counter are.
+        the timestamp and counter are still updated.
 
         In summary:
 
@@ -263,7 +263,12 @@ For all ``d.*`` commands, a explicit ``target`` should be a hash, e.g. ``DDEE5CB
 
     d.chunks_seen
 
-        **TODO**
+        .. code-block:: rtorrentrc
+
+            d.chunks_seen = target ‹hash› ≫ string ‹bitfield›
+
+         Returns a hexidecimal representation of chunks that other
+         peers have sent "seen" messages for.
 
     d.complete
     d.incomplete

@@ -274,7 +274,7 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
             The following is only documented for informational
             purposes. Changing the choke heuristics from the defaults
-            should not be done.
+            should not be done lightly.
 
         The choke heuristics determine the process by which rTorrent
         decides which peer to choke/unchoke. There are 4 heuristics at
@@ -368,15 +368,13 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
 
 Throttles are names for bandwidth limitation rules (for upload,
 download, or both).  The throttle assigned to the item in focus can be
-changed using ``Ctrl-T`` – it will rotate through all defined ones.
+changed using :kbd:`Ctrl-T` – it will rotate through all defined ones.
 
 There are two system throttles, ``NULL`` and the one with an empty
 name.  ``NULL`` is a special throttle for *unlimited*, and the latter
 is the *global* throttle, which is the default for new items and
 what's shown in the status bar on the left as ``[Throttle ‹UP›/‹DOWN›
 KB]``.
-
-**TODO** Explain how throttles work, borrowing from the global throttle.
 
 Other commands in this group determine the limits for upload /
 download slots, and the amount of peers requested in tracker
