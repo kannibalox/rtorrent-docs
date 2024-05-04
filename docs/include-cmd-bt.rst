@@ -54,14 +54,19 @@ See the Github wiki for an example of `enabling DHT in rTorrent`_.
             dht.statistics ≫ dictionary ‹statistics›
 
         Returns ``{'active': 0, 'dht': 'disable', 'throttle': ''}`` when DHT is off,
-        and …
-
-        **TODO**
+        and a variety of additional statistics when DHT is enabeld. See the `source code <https://github.com/rakshasa/rtorrent/blob/master/src/core/dht_manager.cc#L300>`_
+        for the full list of stats.
 
     dht.throttle.name
     dht.throttle.name.set
 
-        **TODO**
+        .. code-block:: rtorrentrc
+
+            dht.throttle.name ≫ string ‹throttle›
+            dht.throttle.name.set = string ‹throttle› ≫ 0
+
+        Set the name of the throttle to be used for DHT traffic. This
+        can only set before DHT becomes active.
 
 .. _`enabling DHT in rTorrent`: https://github.com/rakshasa/rtorrent/wiki/Common-Tasks-in-rTorrent#supporting-public-torrents-magnet-links-udp-trackers-dht
 
