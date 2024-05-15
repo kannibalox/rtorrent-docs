@@ -268,16 +268,16 @@
         Open up a Unix domain socket or a TCP port for SCGI communication (i.e. the XMLRPC socket).
         Only use *one* of these!
 
-        .. note::
+        .. warning::
 
             Using ``network.scgi.open_port`` means *any* user on the machine you run *rTorrent* on can
             execute *arbitrary* commands with the permission of the *rTorrent* runtime user.
             Most people don't realize that, now you do! Also, **never** use any other address than
             ``127.0.0.1`` with it.
 
-         ``scgi_local`` is an alias for
-         ``network.scgi.open_local``. ``scgi_port`` is an alias for
-         ``network.scgi.open_port``.
+        ``scgi_local`` is an alias for
+        ``network.scgi.open_local``. ``scgi_port`` is an alias for
+        ``network.scgi.open_port``.
 
 
     network.tos.set
