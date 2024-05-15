@@ -1,5 +1,5 @@
 Commands Reference
-==================
+------------------
 
 The reference chapter lists all relevant XMLRPC and ‘private’ commands
 provided by *rTorrent* with a short explanation.
