@@ -186,15 +186,17 @@
            network.port_range ≫  string ‹range›
            network.port_range.set = string ‹range› ≫ 0
 
-        This set of options controls how the incoming port is picked.
-        ``network.port_open`` allows for disabling the port entirely,
-        while ``network.port_range`` defines the range of ports
-        rTorrent will consider for use. If ``network.port_random`` is
-        false, the range will be scanned in sequence until a usable
-        one is found. If no suitable ports are found, rTorrent will
-        fail to start. ``port_range`` is an alias for
+        This set of options controls how the incoming peer port is
+        picked.  ``network.port_open`` allows for disabling the port
+        entirely, while ``network.port_range`` defines the range of
+        ports rTorrent will consider for use. If
+        ``network.port_random`` is false, the range will be scanned in
+        sequence until a usable one is found. If no suitable ports are
+        found, rTorrent will fail to start.
+
+        ``port_range`` is an alias for
         ``network.port_range.set``. ``port_random`` is an alias for
-        ``network.port_random.set``
+        ``network.port_random.set``.
 
     network.proxy_address
     network.proxy_address.set
