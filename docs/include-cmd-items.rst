@@ -1088,6 +1088,9 @@ For all ``d.*`` commands, a explicit ``target`` should be a hash, e.g. ``DDEE5CB
         ``0`` means unlimited, and when ``d.uploads_max`` is less than ``d.uploads_min``,
         *rTorrent* will use ``d.uploads_min`` as the maximum instead.
 
+        These default to the values of :term:`throttle.max_uploads` and
+        :term:`throttle.min_uploads` respectively.
+
     d.views
     d.views.has
     d.views.push_back

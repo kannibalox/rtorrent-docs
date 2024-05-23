@@ -474,6 +474,17 @@ announces.
     throttle.max_uploads.global
     throttle.max_uploads.global.set
 
+        Default values:
+
+        .. csv-table::
+
+            throttle.max_downloads,50
+            throttle.max_uploads,50
+            throttle.max_downloads.div,1
+            throttle.max_uploads.div,1
+            throttle.max_downloads_global,0
+            throttle.max_uploads_global,0
+
         **TODO**
 
     throttle.max_uploads.div._val
@@ -494,7 +505,16 @@ announces.
     throttle.min_uploads
     throttle.min_uploads.set
 
-        **TODO**
+        Default values:
+
+        .. csv-table::
+
+            throttle.min_downloads,0
+            throttle.min_uploads,0
+
+        Theses are used as the default values for
+        :ref:`d.downloads_min` and :ref:`d.uploads_min`, respectively,
+        when a torrent is created. See those commands for details.
 
     throttle.min_peers.normal
     throttle.min_peers.normal.set
