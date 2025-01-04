@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "\"rTorrent Handbook\" community project"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+package-mode = false
 packages = []
 
 [tool.poetry.dependencies]

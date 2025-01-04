@@ -1,12 +1,20 @@
 Installation Guide
 ==================
 
-This chapter has some pointers to common ways of installing
-*rTorrent* on your machine
-– and in many cases, also ruTorrent and other related apps and services.
-It does not provide yet another way to do that,
+This chapter has some pointers to common ways of installing *rTorrent*
+on your machine – and in many cases, also ruTorrent and other related
+apps and services.  It does not provide yet another way to do that,
 because there already are plentiful and redundant sources out there.
 
+Installing from source
+======================
+
+See the `rTorrent wiki`<https://github.com/rakshasa/rtorrent/wiki/Installing#installing> for instructions.
+
+Installing from packages
+========================
+
+See the `rTorrent wiki`<https://github.com/rakshasa/rtorrent/wiki#packages> for instructions.
 
 Installation Using OS Packages
 ------------------------------
@@ -86,17 +94,10 @@ or 7).
         Auto install script for *rTorrent*, with *ruTorrent* as the web client.
 
 
-Installing from Source
-----------------------
-
-If you compile your own executable, you are free to chose whatever version you want,
-including the current bleeding edge of development *(git HEAD)*, or any “release tarball”.
+Community Build Documentation
+-----------------------------
 
 .. glossary::
-
-    `Installing (rTorrent wiki) <https://github.com/rakshasa/rtorrent/wiki/Installing>`_
-
-        Installation information and some trouble-shooting hints in the *rTorrent* wiki.
 
     `Manual Turn-Key System Setup <https://rtorrent-ps.readthedocs.io/en/latest/install.html#debianinstallfromsource>`_ (PyroScope)
 
